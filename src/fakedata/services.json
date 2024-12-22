@@ -4,35 +4,45 @@
     "serviceName": "One-on-One Tutoring",
     "price": "$100/month",
     "serviceArea": "Dhaka",
-    "description": "Personalized lessons tailored to individual learning needs."
+    "description": "Personalized lessons tailored to individual learning needs.",
+    "providerName": "Ashiqur Rahman",
+    "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
     "serviceImage": "https://i.ibb.co.com/3fhq4zv/Online-Classes.webp",
     "serviceName": "Online Classes",
     "price": "$50/month",
     "serviceArea": "Chattogram",
-    "description": "Interactive classes with live instructors."
+    "description": "Interactive classes with live instructors.",
+    "providerName": "Ashiqur Rahman",
+    "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
     "serviceImage": "https://i.ibb.co.com/xSjPN1H/Test-Preparation.jpg",
     "serviceName": "Test Preparation",
     "price": "$150/month",
     "serviceArea": "Sylhet",
-    "description": "Comprehensive test prep to boost scores."
+    "description": "Comprehensive test prep to boost scores.",
+    "providerName": "Ashiqur Rahman",
+    "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
     "serviceImage": "https://i.ibb.co.com/ySJQr1R/Language-Learning.jpg",
     "serviceName": "Language Learning",
     "price": "$80/month",
     "serviceArea": "Khulna",
-    "description": "Immersive sessions to enhance fluency."
+    "description": "Immersive sessions to enhance fluency.",
+    "providerName": "Ashiqur Rahman",
+    "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
     "serviceImage": "https://i.ibb.co.com/jfFrS30/Coding-Workshops.jpg",
     "serviceName": "Coding Workshops",
     "price": "$200/month",
     "serviceArea": "Rajshahi",
-    "description": "Hands-on programming for all skill levels."
+    "description": "Hands-on programming for all skill levels.",
+    "providerName": "Ashiqur Rahman",
+    "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
     "serviceImage": "https://example.com/images/art-classes.jpg",
