@@ -9,7 +9,6 @@ const PopularServices = () => {
         axios.get("http://localhost:3000/services")
         .then(res => {
             setServices(res.data)
-            console.log(res.data)
         })
     }, [])
 

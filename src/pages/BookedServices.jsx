@@ -1,11 +1,14 @@
-
+import { Helmet } from "react-helmet-async";
 
 const BookedServices = () => {
-    return (
-        <div>
-            Booked services
-        </div>
-    );
+  return (
+    <div>
+      <Helmet>
+        <title>Booked Service | Skill Crafters</title>
+      </Helmet>
+      Booked services
+    </div>
+  );
 };
 
 export default BookedServices;
