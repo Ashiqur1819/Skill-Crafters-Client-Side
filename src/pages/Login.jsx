@@ -21,7 +21,6 @@ const Login = () => {
           </div>
         </div>
         <div className="py-6">
-        <h2 className="text-2xl px-6 font-bold text-teal-500">Log In</h2>
           <form className="card-body px-6 py-0">
             <div className="form-control">
               <label className="label">
