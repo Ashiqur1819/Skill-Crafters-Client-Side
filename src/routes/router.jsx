@@ -8,12 +8,13 @@ import AddService from "../pages/AddService";
 import ManageService from "../pages/ManageService";
 import BookedServices from "../pages/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <h2>Error Page</h2>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
