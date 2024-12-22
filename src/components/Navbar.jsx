@@ -50,7 +50,7 @@ const Navbar = () => {
           <button>
             <Link
               to="/login"
-              className="py-2 px-6 md:text-lg rounded-lg bg-sky-500 text-white cursor-pointer font-semibold hover:bg-cyan-400"
+              className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500 text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400"
             >
               Log In
             </Link>
