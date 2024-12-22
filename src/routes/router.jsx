@@ -9,6 +9,7 @@ import ManageService from "../pages/ManageService";
 import BookedServices from "../pages/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo";
 import Error from "../pages/Error";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/service_todo",
-        element: <ServiceToDo></ServiceToDo>
+        element: <ServiceToDo></ServiceToDo>,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetails></ServiceDetails>,
       },
       {
         path: "/signup",
