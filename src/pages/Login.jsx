@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash} from 'react-icons/fa';
+import { Link,} from 'react-router-dom';
 import googleImg from "../assets/google.png"
+
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+
 
     return (
       <div className="card grid grid-cols-1 md:grid-cols-2 w-full mx-auto max-w-3xl shrink-0 shadow-2xl mt-12 bg-white rounded-none">
@@ -21,7 +23,7 @@ const Login = () => {
           </div>
         </div>
         <div className="py-6">
-          <form className="card-body px-6 py-0">
+          <form  className="card-body px-6 py-0">
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-base font-medium">Email:</span>
@@ -31,7 +33,6 @@ const Login = () => {
                 name="email"
                 placeholder="Enter your email"
                 className="input input-bordered"
-                required
               />
             </div>
             <div className="form-control relative">
@@ -45,7 +46,6 @@ const Login = () => {
                 name="password"
                 placeholder="Enter your password"
                 className="input input-bordered"
-                required
               />
               <button
                 type="button"
@@ -73,14 +73,12 @@ const Login = () => {
               <div className="divider">
                 <span className="font-medium text-gray-600">OR</span>
               </div>
-              <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
+              <button
+                className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
+              >
                 <div className="flex items-center justify-center gap-3">
                   <span>Log In with Google</span>
-                  <img
-                    src={googleImg}
-                    className="w-6"
-                    alt=""
-                  />
+                  <img src={googleImg} className="w-6" alt="" />
                 </div>
               </button>
             </div>

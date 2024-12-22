@@ -1,10 +1,48 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import googleImg from "../assets/google.png"
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
      const [showPassword, setShowPassword] = useState(false);
+     const { createNewUser, setUser, updateUserProfile } =
+       useContext(AuthContext);
+     const navigate = useNavigate()
+
+     const handleSignUp = (e) => {
+       e.preventDefault();
+
+       const formData = new FormData(e.target);
+       const name = formData.get("name");
+       const photo = formData.get("photo");
+       const email = formData.get("email");
+       const password = formData.get("password");
+
+       createNewUser(email, password)
+         .then((result) => {
+           setUser(result.user);
+           toast.success(`Sign-up successful!`);
+           navigate("/");
+
+           updateUserProfile({ displayName: name, photoURL: photo }).then(
+             () => {
+               setUser((prev) => ({
+                 ...prev,
+                 displayName: name,
+                 photoURL: photo,
+               }));
+               navigate("/");
+             }
+           );
+         })
+         .catch(() =>
+           toast.error(
+             "Oops! We couldn't create your account. Please check your details and try again."
+           )
+         );
+     };
 
      return (
        <div className="card grid grid-cols-1 md:grid-cols-2 w-full mx-auto max-w-4xl shrink-0 shadow-2xl mt-12 bg-white rounded-none">
@@ -20,7 +58,7 @@ const Signup = () => {
            </div>
          </div>
          <div className="py-6">
-           <form className="card-body px-6 py-0">
+           <form onSubmit={handleSignUp} className="card-body px-6 py-0">
              <div className="form-control">
                <label className="label">
                  <span className="label-text text-base font-medium">Name:</span>
@@ -91,7 +129,9 @@ const Signup = () => {
                <div className="divider">
                  <span className="font-medium text-gray-600">OR</span>
                </div>
-               <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3">
+               <button
+                 className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3"
+               >
                  <div className="flex items-center justify-center gap-3">
                    <span>Log In with Google</span>
                    <img src={googleImg} className="w-6" alt="" />
