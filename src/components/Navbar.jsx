@@ -1,6 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+
+  const { user, logOut} = useContext(AuthContext);
+
     const links = (
       <div className="lg:flex items-center gap-6">
         <li>
@@ -9,6 +14,11 @@ const Navbar = () => {
         <li>
           <NavLink to="/services">Services</NavLink>
         </li>
+        {user && user?.email && (
+          <li>
+            <NavLink to="/my_profile">Dashboard</NavLink>
+          </li>
+        )}
       </div>
     );
 
@@ -47,14 +57,37 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px- gap-6 text-base ">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button>
-            <Link
-              to="/login"
-              className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500 text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400"
-            >
-              Log In
-            </Link>
-          </button>
+          {user ? (
+            <div className="flex items-center gap-5">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user?.displayName}
+              >
+                <img
+                  className="w-10 md:w-12 rounded-full cursor-pointer"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <button onClick={logOut}>
+                <Link
+                  to="/"
+                  className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
+                >
+                  Log Out
+                </Link>
+              </button>
+            </div>
+          ) : (
+            <button>
+              <Link
+                to="/login"
+                className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500 text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400"
+              >
+                Log In
+              </Link>
+            </button>
+          )}
         </div>
       </div>
     );

@@ -1,12 +1,34 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash} from 'react-icons/fa';
-import { Link,} from 'react-router-dom';
+import { Link, useNavigate,} from 'react-router-dom';
 import googleImg from "../assets/google.png"
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const {userLogin, setUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      userLogin(email, password)
+        .then((result) => {
+          setUser(result.user);
+          toast.success(` Login successful! Welcome back!`);
+          navigate(location?.state ? location.state : "/");
+        })
+        .catch(() => {
+          toast.error("Invalid login credentials. Please try again.");
+        });
+    };
 
 
     return (
@@ -23,7 +45,7 @@ const Login = () => {
           </div>
         </div>
         <div className="py-6">
-          <form  className="card-body px-6 py-0">
+          <form onSubmit={handleLogin} className="card-body px-6 py-0">
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-base font-medium">Email:</span>
@@ -73,9 +95,7 @@ const Login = () => {
               <div className="divider">
                 <span className="font-medium text-gray-600">OR</span>
               </div>
-              <button
-                className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
-              >
+              <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
                 <div className="flex items-center justify-center gap-3">
                   <span>Log In with Google</span>
                   <img src={googleImg} className="w-6" alt="" />
