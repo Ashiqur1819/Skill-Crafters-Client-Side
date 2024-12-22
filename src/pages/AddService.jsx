@@ -7,7 +7,7 @@ const AddService = () => {
         <title>Add Service | Skill Crafters</title>
       </Helmet>
       <form className="card-body">
-        <h2 className="text-4xl font-bold text-pink-500 text-center">
+        <h2 className="text-4xl font-bold text-teal-500 text-center">
           Add A Service
         </h2>
         <div className="divider my-2"></div>

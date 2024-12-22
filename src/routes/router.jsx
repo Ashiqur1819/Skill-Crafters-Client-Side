@@ -10,6 +10,7 @@ import BookedServices from "../pages/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo";
 import Error from "../pages/Error";
 import ServiceDetails from "../pages/ServiceDetails";
+import BookNow from "../pages/BookNow";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
+        loader: ({params}) =>
+          fetch(`http://localhost:3000/services/${params.id}`),
+      },
+      {
+        path: "/book_now/:id",
+        element: <BookNow></BookNow>,
         loader: ({params}) =>
           fetch(`http://localhost:3000/services/${params.id}`),
       },
