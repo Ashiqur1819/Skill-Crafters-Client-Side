@@ -1,0 +1,86 @@
+[
+  {
+    "serviceImage": "https://i.ibb.co.com/TLtFmBX/One-on-One-Tutoring.webp",
+    "serviceName": "One-on-One Tutoring",
+    "price": "$100/month",
+    "serviceArea": "Dhaka",
+    "description": "Personalized lessons tailored to individual learning needs."
+  },
+  {
+    "serviceImage": "https://i.ibb.co.com/3fhq4zv/Online-Classes.webp",
+    "serviceName": "Online Classes",
+    "price": "$50/month",
+    "serviceArea": "Chattogram",
+    "description": "Interactive classes with live instructors."
+  },
+  {
+    "serviceImage": "https://i.ibb.co.com/xSjPN1H/Test-Preparation.jpg",
+    "serviceName": "Test Preparation",
+    "price": "$150/month",
+    "serviceArea": "Sylhet",
+    "description": "Comprehensive test prep to boost scores."
+  },
+  {
+    "serviceImage": "https://i.ibb.co.com/ySJQr1R/Language-Learning.jpg",
+    "serviceName": "Language Learning",
+    "price": "$80/month",
+    "serviceArea": "Khulna",
+    "description": "Immersive sessions to enhance fluency."
+  },
+  {
+    "serviceImage": "https://i.ibb.co.com/jfFrS30/Coding-Workshops.jpg",
+    "serviceName": "Coding Workshops",
+    "price": "$200/month",
+    "serviceArea": "Rajshahi",
+    "description": "Hands-on programming for all skill levels."
+  },
+  {
+    "serviceImage": "https://example.com/images/art-classes.jpg",
+    "serviceName": "Art Classes",
+    "price": "$120/month",
+    "serviceArea": "Barishal",
+    "description": "Explore creativity through art and design."
+  },
+  {
+    "serviceImage": "https://example.com/images/music-lessons.jpg",
+    "serviceName": "Music Lessons",
+    "price": "$160/month",
+    "serviceArea": "Rangpur",
+    "description": "Learn to play your favorite instrument."
+  },
+  {
+    "serviceImage": "https://example.com/images/public-speaking.jpg",
+    "serviceName": "Public Speaking",
+    "price": "$140/month",
+    "serviceArea": "Mymensingh",
+    "description": "Master the art of effective communication."
+  },
+  {
+    "serviceImage": "https://example.com/images/college-counseling.jpg",
+    "serviceName": "College Counseling",
+    "price": "$300/month",
+    "serviceArea": "Comilla",
+    "description": "Expert guidance for college admissions."
+  },
+  {
+    "serviceImage": "https://example.com/images/fitness-classes.jpg",
+    "serviceName": "Fitness Classes",
+    "price": "$60/month",
+    "serviceArea": "Gazipur",
+    "description": "Stay fit with expert-led fitness programs."
+  },
+  {
+    "serviceImage": "https://example.com/images/financial-literacy.jpg",
+    "serviceName": "Financial Literacy",
+    "price": "$75/month",
+    "serviceArea": "Narayanganj",
+    "description": "Learn essential money management skills."
+  },
+  {
+    "serviceImage": "https://example.com/images/tech-skills.jpg",
+    "serviceName": "Tech Skills Training",
+    "price": "$250/month",
+    "serviceArea": "Bogura",
+    "description": "Stay ahead with cutting-edge tech skills."
+  }
+]

@@ -6,21 +6,31 @@ const Navbar = () => {
 
   const { user, logOut} = useContext(AuthContext);
 
-    const links = (
-      <div className="lg:flex items-center gap-6">
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/services">Services</NavLink>
-        </li>
-        {user && user?.email && (
-          <li>
-            <NavLink to="/my_profile">Dashboard</NavLink>
-          </li>
-        )}
-      </div>
-    );
+    // const links = (
+    //   <div className="lg:flex items-center gap-6">
+    //     <li>
+    //       <NavLink to="/">Home</NavLink>
+    //     </li>
+    //     <li>
+    //       <NavLink to="/services">Services</NavLink>
+    //     </li>
+    //     {user && user?.email && (
+    //       <li>
+    //         <details>
+    //           <summary>Parent</summary>
+    //           <ul class="p-2">
+    //             <li>
+    //               <a>Submenu 1</a>
+    //             </li>
+    //             <li>
+    //               <a>Submenu 2</a>
+    //             </li>
+    //           </ul>
+    //         </details>
+    //       </li>
+    //     )}
+    //   </div>
+    // );
 
     return (
       <div className="navbar px-3 md:px-6 lg:px-12 py-6 bg-blue-50">
@@ -44,9 +54,33 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-md dropdown-content bg-gray-900 rounded-box z-[1] mt-6 w-60 p-2 shadow text-white"
+              className="menu dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              {links}
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/services">Services</NavLink>
+              </li>
+              <li>
+                <details>
+                  <summary>Dashboard</summary>
+                  <ul className="p-2 w-40 bg-blue-50">
+                    <li>
+                      <Link to="add_service">Add Service</Link>
+                    </li>
+                    <li>
+                      <Link to="manage_service">Manage Service</Link>
+                    </li>
+                    <li>
+                      <Link to="booked_services">Booked-Services</Link>
+                    </li>
+                    <li>
+                      <Link to="service_todo">Service-To-Do</Link>
+                    </li>
+                  </ul>
+                </details>
+              </li>
             </ul>
           </div>
           <a className="text-lg text-teal-500 md:text-3xl font-bold hidden md:inline-block">
@@ -54,11 +88,37 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px- gap-6 text-base ">{links}</ul>
+          <ul className="menu menu-horizontal px-1 z-10">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="services">Services</NavLink>
+            </li>
+            <li>
+              <details>
+                <summary>Dashboard</summary>
+                <ul className="p-2 w-40 bg-blue-50">
+                  <li>
+                    <Link to="add_service">Add Service</Link>
+                  </li>
+                  <li>
+                    <Link to="manage_service">Manage Service</Link>
+                  </li>
+                  <li>
+                    <Link to="booked_services">Booked-Services</Link>
+                  </li>
+                  <li>
+                    <Link to="service_todo">Service-To-Do</Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 z-10">
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={user?.displayName}
