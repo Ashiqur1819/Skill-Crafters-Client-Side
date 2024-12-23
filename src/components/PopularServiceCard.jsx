@@ -17,12 +17,12 @@ const PopularServiceCard = ({service}) => {
             {serviceName}
           </h2>
           <p className="font-semibold text-lg text-gray-700 mt-2">
-            Price: <span className="font-normal text-base">{price}</span>
+            Price: <span className="font-normal text-base text-gray-500">${price}/month</span>
           </p>
-          <p className="font-semibold text-lg text-gray-700">
+          <p className="font-semibold text-lg text-gray-700 leading-tight">
             Description:{" "}
-            <span className="font-normal text-base">
-              {description.substring(0, 100)}
+            <span className="font-normal text-base text-gray-500">
+              {description.substring(0, 100)}...
             </span>
           </p>
           <div className="flex items-center gap-6 mt-2">

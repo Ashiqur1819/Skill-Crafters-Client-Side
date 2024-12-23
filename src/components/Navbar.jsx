@@ -142,7 +142,7 @@ const Navbar = () => {
             <button>
               <Link
                 to="/login"
-                className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500 text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400"
+                className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
               >
                 Log In
               </Link>

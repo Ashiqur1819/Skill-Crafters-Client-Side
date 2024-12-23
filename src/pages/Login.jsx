@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { userLogin, setUser } = useContext(AuthContext);
+  const { userLogin, setUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -28,6 +28,17 @@ const Login = () => {
         toast.error("Invalid login credentials. Please try again.");
       });
   };
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
 
   return (
     <div className="card grid grid-cols-1 md:grid-cols-2 w-full mx-auto max-w-3xl shrink-0 shadow-2xl mt-12 bg-white rounded-none">
@@ -96,7 +107,10 @@ const Login = () => {
             <div className="divider">
               <span className="font-medium text-gray-600">OR</span>
             </div>
-            <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
+            <button
+              onClick={handleGoogleLogin}
+              className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
+            >
               <div className="flex items-center justify-center gap-3">
                 <span>Log In with Google</span>
                 <img src={googleImg} className="w-6" alt="" />

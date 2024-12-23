@@ -2,7 +2,7 @@
   {
     "serviceImage": "https://i.ibb.co.com/TLtFmBX/One-on-One-Tutoring.webp",
     "serviceName": "One-on-One Tutoring",
-    "price": "$100/month",
+    "price": "100",
     "serviceArea": "Dhaka",
     "description": "Personalized lessons tailored to individual learning needs.",
     "providerName": "Ashiqur Rahman",
@@ -11,7 +11,7 @@
   {
     "serviceImage": "https://i.ibb.co.com/3fhq4zv/Online-Classes.webp",
     "serviceName": "Online Classes",
-    "price": "$50/month",
+    "price": "50",
     "serviceArea": "Chattogram",
     "description": "Interactive classes with live instructors.",
     "providerName": "Ashiqur Rahman",
@@ -20,7 +20,7 @@
   {
     "serviceImage": "https://i.ibb.co.com/xSjPN1H/Test-Preparation.jpg",
     "serviceName": "Test Preparation",
-    "price": "$150/month",
+    "price": "150",
     "serviceArea": "Sylhet",
     "description": "Comprehensive test prep to boost scores.",
     "providerName": "Ashiqur Rahman",
@@ -29,7 +29,7 @@
   {
     "serviceImage": "https://i.ibb.co.com/ySJQr1R/Language-Learning.jpg",
     "serviceName": "Language Learning",
-    "price": "$80/month",
+    "price": "80",
     "serviceArea": "Khulna",
     "description": "Immersive sessions to enhance fluency.",
     "providerName": "Ashiqur Rahman",
@@ -38,58 +38,58 @@
   {
     "serviceImage": "https://i.ibb.co.com/jfFrS30/Coding-Workshops.jpg",
     "serviceName": "Coding Workshops",
-    "price": "$200/month",
+    "price": "200",
     "serviceArea": "Rajshahi",
     "description": "Hands-on programming for all skill levels.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
   {
-    "serviceImage": "https://example.com/images/art-classes.jpg",
+    "serviceImage": "https://i.ibb.co.com/YL2BJKG/Art-Classes.webp",
     "serviceName": "Art Classes",
-    "price": "$120/month",
+    "price": "120",
     "serviceArea": "Barishal",
     "description": "Explore creativity through art and design."
   },
   {
     "serviceImage": "https://example.com/images/music-lessons.jpg",
     "serviceName": "Music Lessons",
-    "price": "$160/month",
+    "price": "160",
     "serviceArea": "Rangpur",
     "description": "Learn to play your favorite instrument."
   },
   {
     "serviceImage": "https://example.com/images/public-speaking.jpg",
     "serviceName": "Public Speaking",
-    "price": "$140/month",
+    "price": "140",
     "serviceArea": "Mymensingh",
     "description": "Master the art of effective communication."
   },
   {
     "serviceImage": "https://example.com/images/college-counseling.jpg",
     "serviceName": "College Counseling",
-    "price": "$300/month",
+    "price": "300",
     "serviceArea": "Comilla",
     "description": "Expert guidance for college admissions."
   },
   {
     "serviceImage": "https://example.com/images/fitness-classes.jpg",
     "serviceName": "Fitness Classes",
-    "price": "$60/month",
+    "price": "60",
     "serviceArea": "Gazipur",
     "description": "Stay fit with expert-led fitness programs."
   },
   {
     "serviceImage": "https://example.com/images/financial-literacy.jpg",
     "serviceName": "Financial Literacy",
-    "price": "$75/month",
+    "price": "75",
     "serviceArea": "Narayanganj",
     "description": "Learn essential money management skills."
   },
   {
     "serviceImage": "https://example.com/images/tech-skills.jpg",
     "serviceName": "Tech Skills Training",
-    "price": "$250/month",
+    "price": "250",
     "serviceArea": "Bogura",
     "description": "Stay ahead with cutting-edge tech skills."
   }

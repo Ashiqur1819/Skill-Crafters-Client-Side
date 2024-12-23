@@ -1,12 +1,50 @@
+import axios from "axios";
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
+
+  const navigate = useNavigate()
+  const {user} = useContext(AuthContext);
+  const providerName = user?.displayName;
+  const providerImage = user?.photoURL;
+  const providerEmail = user?.email;
+
+  console.log(providerName, providerImage, providerEmail)
+
+  const handleAddService = e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const service = Object.fromEntries(formData.entries());
+    service.providerName = providerName
+    service.providerImage = providerImage
+    service.providerEmail = providerEmail
+
+    // Send service data from client side to server side
+    axios.post("http://localhost:3000/services", service)
+    .then(res => {
+      if(res.data.insertedId){
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations",
+          text: `${service.serviceName} added successfully`,
+        });
+      }
+      navigate("/manage_service");
+    })
+  }
+
   return (
     <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
       <Helmet>
         <title>Add Service | Skill Crafters</title>
       </Helmet>
-      <form className="card-body">
+      <form onSubmit={handleAddService} className="card-body">
         <h2 className="text-4xl font-bold text-teal-500 text-center">
           Add A Service
         </h2>
@@ -19,7 +57,7 @@ const AddService = () => {
           </label>
           <input
             type="url"
-            name="image"
+            name="serviceImage"
             placeholder="Service image url"
             className="input input-bordered"
           />
@@ -32,7 +70,7 @@ const AddService = () => {
           </label>
           <input
             type="text"
-            name="name"
+            name="serviceName"
             placeholder="Service name"
             className="input input-bordered"
           />
@@ -58,7 +96,7 @@ const AddService = () => {
           </label>
           <input
             type="text"
-            name="area"
+            name="serviceArea"
             placeholder="Service area"
             className="input input-bordered"
           />
