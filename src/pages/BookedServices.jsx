@@ -33,7 +33,7 @@ const BookedServices = () => {
                   <th className="font-semibold">Service Name</th>
                   <th className="font-semibold">Location</th>
                   <th className="font-semibold">Price</th>
-                  <th className="font-semibold">Date</th>
+                  <th className="font-semibold">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,8 +55,8 @@ const BookedServices = () => {
                     <td className="text-base text-gray-500 font-medium">
                       ${service.price}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
-                      {service.takingDate}
+                    <td className={`text-base text-gray-700 font-medium`}>
+                      <p className={`${service.serviceStatus === "Pending" && "bg-red-400"} ${service.serviceStatus === "Working" && "bg-yellow-400"} ${service.serviceStatus === "Completed" && "bg-green-400"} text-center py-1 rounded-md`}>{service.serviceStatus}</p>
                     </td>
                   </tr>
                 ))}

@@ -13,6 +13,7 @@ import ServiceDetails from "../pages/ServiceDetails";
 import BookNow from "../pages/BookNow";
 import AllServices from "../pages/AllServices";
 import PrivateRoute from "./PrivateRoute";
+import UpdateService from "../pages/UpdateService";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/services/${params.id}`),
+      },
+      {
+        path: "/update_service/:id",
+        element: <UpdateService></UpdateService>
       },
       {
         path: "/signup",
