@@ -64,23 +64,25 @@ const Navbar = () => {
                 <NavLink to="/all_services">All Services</NavLink>
               </li>
               <li>
-                <details>
-                  <summary>Dashboard</summary>
-                  <ul className="p-2 w-40 bg-blue-50">
-                    <li>
-                      <Link to="add_service">Add Service</Link>
-                    </li>
-                    <li>
-                      <Link to="manage_service">Manage Service</Link>
-                    </li>
-                    <li>
-                      <Link to="booked_services">Booked-Services</Link>
-                    </li>
-                    <li>
-                      <Link to="service_todo">Service-To-Do</Link>
-                    </li>
-                  </ul>
-                </details>
+                {user?.email && (
+                  <details>
+                    <summary>Dashboard</summary>
+                    <ul className="p-2 w-40 bg-blue-50">
+                      <li>
+                        <Link to="add_service">Add Service</Link>
+                      </li>
+                      <li>
+                        <Link to="manage_service">Manage Service</Link>
+                      </li>
+                      <li>
+                        <Link to="booked_services">Booked-Services</Link>
+                      </li>
+                      <li>
+                        <Link to="service_todo">Service-To-Do</Link>
+                      </li>
+                    </ul>
+                  </details>
+                )}
               </li>
             </ul>
           </div>
@@ -98,23 +100,25 @@ const Navbar = () => {
               <NavLink to="/all_services">All Services</NavLink>
             </li>
             <li>
-              <details>
-                <summary>Dashboard</summary>
-                <ul className="p-2 w-40 bg-blue-50">
-                  <li>
-                    <Link to="add_service">Add Service</Link>
-                  </li>
-                  <li>
-                    <Link to="manage_service">Manage Service</Link>
-                  </li>
-                  <li>
-                    <Link to="booked_services">Booked-Services</Link>
-                  </li>
-                  <li>
-                    <Link to="service_todo">Service-To-Do</Link>
-                  </li>
-                </ul>
-              </details>
+              {user?.email && (
+                <details>
+                  <summary>Dashboard</summary>
+                  <ul className="p-2 w-40 bg-blue-50">
+                    <li>
+                      <Link to="add_service">Add Service</Link>
+                    </li>
+                    <li>
+                      <Link to="manage_service">Manage Service</Link>
+                    </li>
+                    <li>
+                      <Link to="booked_services">Booked-Services</Link>
+                    </li>
+                    <li>
+                      <Link to="service_todo">Service-To-Do</Link>
+                    </li>
+                  </ul>
+                </details>
+              )}
             </li>
           </ul>
         </div>

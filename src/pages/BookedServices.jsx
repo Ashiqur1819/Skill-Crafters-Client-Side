@@ -18,14 +18,10 @@ const BookedServices = () => {
   const filteredServices = bookedServices.filter(bookService => bookService.userEmail === email)
 
 
-  console.log(filteredServices);
-
-
-
   return (
     <div className="px:4 md:px-6 lg:px-8 mt-12">
       <Helmet>
-        <title>Booked Service | Skill Crafters</title>
+        <title>Booked Services | Skill Crafters</title>
       </Helmet>
       <div>
         <div className="overflow-x-auto">

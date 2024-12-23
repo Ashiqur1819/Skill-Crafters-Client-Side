@@ -12,6 +12,7 @@ import Error from "../pages/Error";
 import ServiceDetails from "../pages/ServiceDetails";
 import BookNow from "../pages/BookNow";
 import AllServices from "../pages/AllServices";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,23 +31,43 @@ const router = createBrowserRouter([
       },
       {
         path: "/add_service",
-        element: <AddService></AddService>,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage_service",
-        element: <ManageService></ManageService>,
+        element: (
+          <PrivateRoute>
+            <ManageService></ManageService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/booked_services",
-        element: <BookedServices></BookedServices>,
+        element: (
+          <PrivateRoute>
+            <BookedServices></BookedServices>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/service_todo",
-        element: <ServiceToDo></ServiceToDo>,
+        element: (
+          <PrivateRoute>
+            <ServiceToDo></ServiceToDo>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/services/${params.id}`),
       },
