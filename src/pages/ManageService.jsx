@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
+import Swal from "sweetalert2";
 
 const ManageService = () => {
 
@@ -17,6 +18,33 @@ const ManageService = () => {
       setServices(res.data)
     })
   }, [])
+
+  const handleDeleteService = id => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#20a7db",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`http://localhost:3000/services/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your service has been deleted.",
+              icon: "success",
+            });
+
+            const remaining = services.filter((service) => service._id !== id);
+            setServices(remaining);
+          }
+        });
+      }
+    });
+  }
 
   return (
     <div className="px-4 md:px-6 lg:px-8 mt-12">
@@ -64,7 +92,10 @@ const ManageService = () => {
                           <FaRegEdit></FaRegEdit>
                         </Link>
                       </button>
-                      <button className="bg-red-500 px-3 py-2 text-white rounded-md">
+                      <button
+                        onClick={() => handleDeleteService(service._id)}
+                        className="bg-red-500 px-3 py-2 text-white rounded-md"
+                      >
                         <GoTrash></GoTrash>
                       </button>
                     </td>

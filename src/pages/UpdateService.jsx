@@ -18,7 +18,7 @@ const UpdateService = () => {
         //  Send data from client side to server side
         axios.put(`http://localhost:3000/services/${_id}`, updatedService)
         .then(res => {
-            if (res.data.modifiedCount === 1) {
+            if (res.data.modifiedCount > 0) {
               Swal.fire({
                 icon: "success",
                 title: "Congratulations",
