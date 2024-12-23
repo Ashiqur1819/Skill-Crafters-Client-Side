@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
+import logo from "../assets/skill.png"
 
 const Navbar = () => {
 
@@ -60,7 +61,7 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/services">Services</NavLink>
+                <NavLink to="/all_services">All Services</NavLink>
               </li>
               <li>
                 <details>
@@ -83,8 +84,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-lg text-teal-500 md:text-3xl font-bold hidden md:inline-block">
-            Skill Crafters
+          <a className="text-lg text-teal-500 md:text-3xl font-bold flex items-center gap-1">
+            <img src={logo} className="w-12" alt="" />
+            <span className="hidden md:inline">Skill Crafters</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -93,7 +95,7 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/all_services">Services</NavLink>
+              <NavLink to="/all_services">All Services</NavLink>
             </li>
             <li>
               <details>
