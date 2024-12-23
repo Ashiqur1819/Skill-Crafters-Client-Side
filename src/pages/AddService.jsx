@@ -13,8 +13,6 @@ const AddService = () => {
   const providerImage = user?.photoURL;
   const providerEmail = user?.email;
 
-  console.log(providerName, providerImage, providerEmail)
-
   const handleAddService = e => {
     e.preventDefault();
 

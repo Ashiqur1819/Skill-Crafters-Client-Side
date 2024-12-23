@@ -6,7 +6,6 @@ import AllServiceCard from "../components/AllServiceCard";
 const AllServices = () => {
 
   const services = useLoaderData();
-  console.log(services)
 
   return (
     <div className="px:4 md:px-6 lg:px-8">

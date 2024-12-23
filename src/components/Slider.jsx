@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import s1 from "../assets/1.jpg"
 import s2 from "../assets/2.jpg"
 import s3 from "../assets/3.webp"
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
@@ -30,7 +31,7 @@ const Slider = () => {
                 learning paths to help you achieve your goals.
               </p>
               <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
-                Explore Now
+                <Link to="/all_services">Explore Now</Link>
               </button>
             </div>
           </div>
@@ -55,7 +56,7 @@ const Slider = () => {
                 whenever and wherever you need it.
               </p>
               <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
-                Explore Now
+                <Link to="/all_services">Explore Now</Link>
               </button>
             </div>
           </div>
@@ -64,7 +65,7 @@ const Slider = () => {
           <div
             className="h-[550px] flex items-center"
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${s3})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${s3})`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
@@ -80,7 +81,7 @@ const Slider = () => {
                 education more accessible than ever.
               </p>
               <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
-                Explore Now
+                <Link to="/all_services">Explore Now</Link>
               </button>
             </div>
           </div>
