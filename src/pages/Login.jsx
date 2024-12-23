@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleImg from "../assets/google.png";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
@@ -10,6 +10,8 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { userLogin, setUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state ? location.state : "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ const Login = () => {
       .then((result) => {
         setUser(result.user);
         toast.success(` Login successful! Welcome back!`);
-        navigate(location?.state ? location.state : "/");
+        navigate(from);
       })
       .catch(() => {
         toast.error("Invalid login credentials. Please try again.");
@@ -32,10 +34,14 @@ const Login = () => {
   const handleGoogleLogin = () => {
     loginWithGoogle()
     .then(result => {
-      console.log(result)
+      setUser(result.user);
+      toast.success(`Google login successful!`);
+      navigate(from);
     })
-    .catch(err => {
-      console.log(err)
+    .catch(() => {
+      toast.error(
+        "Google login failed. Please check your connection and try again."
+      );
     })
   }
 
@@ -108,6 +114,7 @@ const Login = () => {
               <span className="font-medium text-gray-600">OR</span>
             </div>
             <button
+              type="button"
               onClick={handleGoogleLogin}
               className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
             >

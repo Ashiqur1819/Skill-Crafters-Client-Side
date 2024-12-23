@@ -4,7 +4,7 @@
     "serviceName": "One-on-One Tutoring",
     "price": "100",
     "serviceArea": "Dhaka",
-    "description": "Personalized lessons tailored to individual learning needs.",
+    "description": "Personalized lessons tailored to individual learning needs. Improve academic performance with expert guidance in math, science, and English. Flexible scheduling ensures compatibility with students' routines, helping them achieve their educational goals and boost confidence in problem-solving and critical thinking.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
@@ -13,7 +13,7 @@
     "serviceName": "Online Classes",
     "price": "50",
     "serviceArea": "Chattogram",
-    "description": "Interactive classes with live instructors.",
+    "description": "Interactive classes with live instructors. Access recorded sessions, supplementary materials, and hands-on projects. Flexible schedules allow students to learn at their own pace while receiving support from professional educators. Ideal for school students and adults looking to upgrade their skills.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
@@ -22,7 +22,7 @@
     "serviceName": "Test Preparation",
     "price": "150",
     "serviceArea": "Sylhet",
-    "description": "Comprehensive test prep to boost scores.",
+    "description": "Comprehensive test prep designed to boost scores in SAT, ACT, GRE, and GMAT. Our structured approach includes mock tests, expert strategies, and personalized feedback. Students develop confidence and mastery over subjects to excel in their exams and secure admissions to their dream institutions.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
@@ -31,7 +31,7 @@
     "serviceName": "Language Learning",
     "price": "80",
     "serviceArea": "Khulna",
-    "description": "Immersive sessions to enhance fluency.",
+    "description": "Immersive language sessions in Spanish, French, and Mandarin. Focus on conversational fluency, grammar, and vocabulary. Learn through interactive activities, role-playing, and cultural immersion techniques designed to enhance communication skills and provide a global perspective.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
@@ -40,7 +40,7 @@
     "serviceName": "Coding Workshops",
     "price": "200",
     "serviceArea": "Rajshahi",
-    "description": "Hands-on programming for all skill levels.",
+    "description": "Hands-on programming workshops covering Python, JavaScript, and Java. Suitable for beginners and experienced developers. Learn to build real-world projects, debug efficiently, and enhance coding logic through expert mentorship and collaborative learning opportunities.",
     "providerName": "Ashiqur Rahman",
     "providerImage": "https://ashiqur1819.github.io/My-Portfolio/images/profile/hero.png"
   },
@@ -49,48 +49,48 @@
     "serviceName": "Art Classes",
     "price": "120",
     "serviceArea": "Barishal",
-    "description": "Explore creativity through art and design."
+    "description": "Explore creativity with professional art lessons in drawing, painting, and sculpting. Classes cater to all skill levels and age groups, fostering self-expression through various mediums. Students gain confidence in their artistic abilities and enjoy a supportive learning environment."
   },
   {
     "serviceImage": "https://example.com/images/music-lessons.jpg",
     "serviceName": "Music Lessons",
     "price": "160",
     "serviceArea": "Rangpur",
-    "description": "Learn to play your favorite instrument."
+    "description": "Learn to play instruments like piano, guitar, and violin from experienced teachers. Our lessons include music theory, practice techniques, and performance skills. Build a solid foundation in music while exploring creativity and enjoying the joy of self-expression through melodies."
   },
   {
     "serviceImage": "https://example.com/images/public-speaking.jpg",
     "serviceName": "Public Speaking",
     "price": "140",
     "serviceArea": "Mymensingh",
-    "description": "Master the art of effective communication."
+    "description": "Master public speaking with expert coaching. Learn to craft compelling speeches, refine delivery, and build confidence. Tailored lessons focus on overcoming stage fright, structuring arguments, and engaging diverse audiences effectively for personal and professional growth."
   },
   {
     "serviceImage": "https://example.com/images/college-counseling.jpg",
     "serviceName": "College Counseling",
     "price": "300",
     "serviceArea": "Comilla",
-    "description": "Expert guidance for college admissions."
+    "description": "Expert guidance on college admissions, application strategies, and essay writing. Our counselors work closely with students to identify their strengths, build competitive profiles, and prepare for interviews. Achieve your educational dreams with step-by-step, personalized support."
   },
   {
     "serviceImage": "https://example.com/images/fitness-classes.jpg",
     "serviceName": "Fitness Classes",
     "price": "60",
     "serviceArea": "Gazipur",
-    "description": "Stay fit with expert-led fitness programs."
+    "description": "Stay fit with yoga, Pilates, and aerobics classes designed for all levels. Professional instructors provide personalized guidance to meet fitness goals. Improve flexibility, strength, and overall health while enjoying an engaging and supportive community environment."
   },
   {
     "serviceImage": "https://example.com/images/financial-literacy.jpg",
     "serviceName": "Financial Literacy",
     "price": "75",
     "serviceArea": "Narayanganj",
-    "description": "Learn essential money management skills."
+    "description": "Learn essential money management skills, including budgeting, investing, and tax planning. Gain financial independence through practical lessons designed for students, professionals, and families. Build a secure financial future with our comprehensive training."
   },
   {
     "serviceImage": "https://example.com/images/tech-skills.jpg",
     "serviceName": "Tech Skills Training",
     "price": "250",
     "serviceArea": "Bogura",
-    "description": "Stay ahead with cutting-edge tech skills."
+    "description": "Advance your career with tech skills training in Excel, data analysis, and AI tools. Learn through hands-on projects and expert mentorship. Ideal for students and professionals aiming to excel in the competitive tech industry with cutting-edge knowledge and skills."
   }
 ]
