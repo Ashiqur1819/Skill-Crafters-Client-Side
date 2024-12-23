@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const BookNow = () => {
 
+    const navigate = useNavigate()
     const {user} = useContext(AuthContext);
     const userEmail = user?.email;
     const userName = user?.displayName
-    console.log(user)
     const service = useLoaderData();
     const {
       _id,
@@ -16,16 +18,40 @@ const BookNow = () => {
       serviceName,
       price,
       providerName,
+      providerEmail,
       serviceArea,
     } = service;
 
+    const handlePurchaseService = e => {
+      e.preventDefault();
+      const date = e.target.date.value;
+      service.takingDate = date
+      service.userName = userName
+      service.userEmail = userEmail
+      service.serviceStatus = "Pending"
+
+      const {_id, ...rest} = service
+      
+      // Send data from client side to server side
+      axios.post("http://localhost:3000/booked_services", rest)
+      .then(res => {
+        if(res.data.insertedId){
+                Swal.fire({
+                  icon: "success",
+                  title: "Congratulations",
+                  text: `${service.serviceName} added successfully`,
+                });
+              }
+              navigate("/booked_services");
+      })
+    }
     return (
       <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
         <Helmet>
           <title>Book Now | Skill Crafters</title>
         </Helmet>
         <div>
-          <form className="card-body">
+          <form onSubmit={handlePurchaseService} className="card-body">
             <h2 className="text-4xl font-bold text-sky-400 text-center">
               Book Now
             </h2>
@@ -39,7 +65,7 @@ const BookNow = () => {
               <input
                 type="text"
                 name="id"
-                value={_id}
+                defaultValue={_id}
                 readOnly
                 placeholder="Service id"
                 className="input input-bordered text-pink-500"
@@ -54,7 +80,7 @@ const BookNow = () => {
               <input
                 type="text"
                 name="name"
-                value={serviceName}
+                defaultValue={serviceName}
                 readOnly
                 placeholder="Service name"
                 className="input input-bordered text-pink-500"
@@ -69,22 +95,9 @@ const BookNow = () => {
               <input
                 type="url"
                 name="image"
-                value={serviceImage}
+                defaultValue={serviceImage}
                 readOnly
                 placeholder="Service image"
-                className="input input-bordered text-pink-500"
-              />
-            </div>
-            <div className="form-control relative">
-              <label className="label">
-                <span className="label-text text-base font-medium">
-                  Provider Email:
-                </span>
-              </label>
-              <input
-                type="email"
-                name="provider_email"
-                placeholder="Provider email"
                 className="input input-bordered text-pink-500"
               />
             </div>
@@ -97,7 +110,7 @@ const BookNow = () => {
               <input
                 type="text"
                 name="provider_name"
-                value={providerName}
+                defaultValue={providerName}
                 readOnly
                 placeholder="Provider name"
                 className="input input-bordered text-pink-500"
@@ -106,15 +119,14 @@ const BookNow = () => {
             <div className="form-control relative">
               <label className="label">
                 <span className="label-text text-base font-medium">
-                  User Email:
+                  Provider Email:
                 </span>
               </label>
               <input
-                type="text"
-                name="user_email"
-                value={userEmail}
-                readOnly
-                placeholder="User email"
+                type="email"
+                name="provider_email"
+                defaultValue={providerEmail}
+                placeholder="Provider email"
                 className="input input-bordered text-pink-500"
               />
             </div>
@@ -127,9 +139,24 @@ const BookNow = () => {
               <input
                 type="text"
                 name="user_name"
-                value={userName}
+                defaultValue={userName}
                 readOnly
                 placeholder="User name"
+                className="input input-bordered text-pink-500"
+              />
+            </div>
+            <div className="form-control relative">
+              <label className="label">
+                <span className="label-text text-base font-medium">
+                  User Email:
+                </span>
+              </label>
+              <input
+                type="text"
+                name="user_email"
+                defaultValue={userEmail}
+                readOnly
+                placeholder="User email"
                 className="input input-bordered text-pink-500"
               />
             </div>
@@ -155,7 +182,7 @@ const BookNow = () => {
               <input
                 type="text"
                 name="area"
-                value={serviceArea}
+                defaultValue={serviceArea}
                 placeholder="Area"
                 className="input input-bordered text-pink-500"
               />
@@ -167,7 +194,7 @@ const BookNow = () => {
               <input
                 type="text"
                 name="price"
-                value={price}
+                defaultValue={price}
                 readOnly
                 placeholder="Price"
                 className="input input-bordered text-pink-500"
