@@ -84,7 +84,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/update_service/:id",
-        element: <UpdateService></UpdateService>
+        element: <UpdateService></UpdateService>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/services/${params.id}`),
       },
       {
         path: "/signup",

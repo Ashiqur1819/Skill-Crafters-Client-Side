@@ -68,7 +68,7 @@ const BookNow = () => {
                 defaultValue={_id}
                 readOnly
                 placeholder="Service id"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -83,7 +83,7 @@ const BookNow = () => {
                 defaultValue={serviceName}
                 readOnly
                 placeholder="Service name"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -98,7 +98,7 @@ const BookNow = () => {
                 defaultValue={serviceImage}
                 readOnly
                 placeholder="Service image"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -113,7 +113,7 @@ const BookNow = () => {
                 defaultValue={providerName}
                 readOnly
                 placeholder="Provider name"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -127,7 +127,7 @@ const BookNow = () => {
                 name="provider_email"
                 defaultValue={providerEmail}
                 placeholder="Provider email"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -142,7 +142,7 @@ const BookNow = () => {
                 defaultValue={userName}
                 readOnly
                 placeholder="User name"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -157,7 +157,7 @@ const BookNow = () => {
                 defaultValue={userEmail}
                 readOnly
                 placeholder="User email"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -170,7 +170,7 @@ const BookNow = () => {
                 type="date"
                 name="date"
                 placeholder="Date"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -184,7 +184,7 @@ const BookNow = () => {
                 name="area"
                 defaultValue={serviceArea}
                 placeholder="Area"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control relative">
@@ -197,7 +197,7 @@ const BookNow = () => {
                 defaultValue={price}
                 readOnly
                 placeholder="Price"
-                className="input input-bordered text-pink-500"
+                className="input input-bordered text-gray-500"
               />
             </div>
             <div className="form-control mt-4">
