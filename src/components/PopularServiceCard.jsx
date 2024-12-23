@@ -25,12 +25,12 @@ const PopularServiceCard = ({service}) => {
               {description.substring(0, 100)}...
             </span>
           </p>
-          <div className="flex items-center gap-6 mt-2">
+          <div className="flex items-center gap-3 mt-3">
             <span className="font-semibold text-lg text-gray-700">
               Provider:
             </span>
-            <div className="flex items-center gap-3">
-              <img src={providerImage} className="w-8" alt="" />
+            <div className="flex items-center gap-2">
+              <img src={providerImage} className="w-8 rounded-full" alt="" />
               <p className="text-indigo-500 font-semibold">{providerName}</p>
             </div>
           </div>
