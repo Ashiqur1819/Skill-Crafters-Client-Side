@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
+import { motion } from "motion/react"
 
 
 const PopularServiceCard = ({service}) => {
     const {_id, serviceImage, serviceName, price, providerName, providerImage, description} = service
     return (
-      <div className="card bg-base-100 shadow-xl rounded-md">
+      <motion.div
+        whileHover={{
+          scale: 0.95,
+          transition: { duration: 0.3 },
+          ease: ["easeIn", "easeOut"],
+        }}
+        className="card bg-base-100 shadow-xl rounded-md"
+      >
         <div className="p-6">
           <figure>
             <img
@@ -17,7 +25,10 @@ const PopularServiceCard = ({service}) => {
             {serviceName}
           </h2>
           <p className="font-semibold text-lg text-gray-700 mt-2">
-            Price: <span className="font-normal text-base text-gray-500">${price}/month</span>
+            Price:{" "}
+            <span className="font-normal text-base text-gray-500">
+              ${price}/month
+            </span>
           </p>
           <p className="font-semibold text-lg text-gray-700 leading-tight">
             Description:{" "}
@@ -40,7 +51,7 @@ const PopularServiceCard = ({service}) => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
 };
 

@@ -6,6 +6,8 @@ import s1 from "../assets/1.jpg"
 import s2 from "../assets/2.jpg"
 import s3 from "../assets/3.webp"
 import { Link } from "react-router-dom";
+import { motion } from "motion/react"
+import { easeInOut } from "motion";
 
 const Slider = () => {
   return (
@@ -22,17 +24,32 @@ const Slider = () => {
             }}
           >
             <div className="max-w-3xl p-6 md:p-12 lg:p-20">
-              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-yellow-400 mb-6">
+              <motion.h2
+                initial={{ x: -100 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="text-3xl md:text-5xl lg:text-7xl font-bold text-yellow-400 mb-6"
+              >
                 Unlock the Power of Learning
-              </h2>
-              <p className="text-white mb-6">
+              </motion.h2>
+              <motion.p
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="text-white mb-6"
+              >
                 Dive into a world where education meets innovation. Our platform
                 offers interactive courses, expert guidance, and personalized
                 learning paths to help you achieve your goals.
-              </p>
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
+              </motion.p>
+              <motion.button
+                initial={{ x: 100 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
+              >
                 <Link to="/all_services">Explore Now</Link>
-              </button>
+              </motion.button>
             </div>
           </div>
         </SwiperSlide>
