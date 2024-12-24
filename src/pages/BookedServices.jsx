@@ -6,17 +6,14 @@ import { Link } from "react-router-dom";
 
 const BookedServices = () => {
   const {user} = useContext(AuthContext);
-  const email = user?.email;
   const [bookedServices, setBookServices] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:3000/booked_services")
-    .then(res => {
-      setBookServices(res.data)
-    })
+    axios
+      .get(`http://localhost:3000/booked_services/${user?.email}`)
+      .then((res) => {
+        setBookServices(res.data);
+      });
   },[setBookServices])
-
-  const filteredServices = bookedServices.filter(bookService => bookService.userEmail === email)
-
 
   return (
     <div className="px:4 md:px-6 lg:px-8 mt-12">
@@ -25,7 +22,7 @@ const BookedServices = () => {
       </Helmet>
       <div>
         <div className="overflow-x-auto">
-          {!filteredServices.length == 0 ? (
+          {!bookedServices.length == 0 ? (
             <table className="table">
               <thead>
                 <tr className="text-lg text-sky-500">
@@ -37,7 +34,7 @@ const BookedServices = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredServices.map((service, index) => (
+                {bookedServices.map((service, index) => (
                   <tr key={index}>
                     <td>
                       <img
