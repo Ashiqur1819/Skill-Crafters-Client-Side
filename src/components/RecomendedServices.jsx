@@ -24,7 +24,7 @@ const RecomendedServices = () => {
           your preferences and interests. This section is designed to make your
           experience seamless by helping you find exactly what you need with
           ease and convenience.</p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             {
               sortedServices.slice(0, 4).map(service => <RecomendedServiceCard service={service} key={service._id}></RecomendedServiceCard>)
             }

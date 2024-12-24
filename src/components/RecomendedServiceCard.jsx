@@ -10,7 +10,7 @@ const RecomendedServiceCard = ({service}) => {
          description,
        } = service;
     return (
-      <div className="md:flex items-center gap-6 border p-4 rounded-md">
+      <div className="md:flex items-center gap-6 p-4 rounded-md hover:shadow-lg hover:scale-105 transition-transform hover:duration-200 ease-in ">
         <div className="flex-1">
           <img src={serviceImage} className="w-full h-52 object-cover rounded-md" alt="" />
         </div>

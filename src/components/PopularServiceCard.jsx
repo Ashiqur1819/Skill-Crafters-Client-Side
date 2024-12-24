@@ -17,6 +17,7 @@ const PopularServiceCard = ({service}) => {
           <figure>
             <img
               src={serviceImage}
+              referrerPolicy="no-referrer"
               className="h-60 w-full object-cover rounded-md"
               alt="Shoes"
             />

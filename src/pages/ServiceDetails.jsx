@@ -24,6 +24,7 @@ const ServiceDetails = () => {
           <div className="flex-1">
             <img
               src={serviceImage}
+              referrerPolicy="no-referrer"
               className="w-full h-[400px] object-cover rounded-md"
               alt=""
             />

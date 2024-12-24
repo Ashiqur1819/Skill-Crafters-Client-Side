@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 const AllServiceCard = ({service}) => {
     const {_id, serviceImage, serviceName, price, serviceArea, providerName, providerImage, description} = service
     return (
-      <div className="card bg-base-100 shadow-xl rounded-md">
+      <div className="card bg-base-100 border shadow-md rounded-md hover:-translate-y-3 duration-200">
         <div className="p-6">
           <figure>
             <img
               src={serviceImage}
+              referrerPolicy="no-referrer"
               className="h-60 w-full object-cover rounded-md"
               alt="Shoes"
             />

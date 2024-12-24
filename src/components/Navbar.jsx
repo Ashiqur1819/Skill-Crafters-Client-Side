@@ -137,6 +137,7 @@ const Navbar = () => {
                 <img
                   className="w-10 md:w-12 rounded-full cursor-pointer"
                   src={user?.photoURL}
+                  referrerPolicy="no-referrer"
                   alt=""
                 />
               </div>
