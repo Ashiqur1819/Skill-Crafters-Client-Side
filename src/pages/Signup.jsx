@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleImg from "../assets/google.png";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
@@ -8,8 +8,11 @@ import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const { createNewUser, setUser, updateUserProfile, loginWithGoogle } =
+    useContext(AuthContext);
   const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state ? location.state : "/";
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -41,6 +44,20 @@ const Signup = () => {
         )
       );
   };
+
+  const handleGoogleLogin = () => {
+      loginWithGoogle()
+      .then(result => {
+        setUser(result.user);
+        toast.success(`Google login successful!`);
+        navigate(from);
+      })
+      .catch(() => {
+        toast.error(
+          "Google login failed. Please check your connection and try again."
+        );
+      })
+    }
 
   return (
     <div className="px-4">
@@ -129,7 +146,11 @@ const Signup = () => {
               <div className="divider">
                 <span className="font-medium text-gray-600">OR</span>
               </div>
-              <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3">
+              <button
+                type="button"
+                onClick={handleGoogleLogin}
+                className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3"
+              >
                 <div className="flex items-center justify-center gap-3">
                   <span>Log In with Google</span>
                   <img src={googleImg} className="w-6" alt="" />

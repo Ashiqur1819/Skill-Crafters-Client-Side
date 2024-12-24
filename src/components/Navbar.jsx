@@ -7,7 +7,6 @@ const Navbar = () => {
 
   const { user, logOut} = useContext(AuthContext);
 
-    // const links = (
     //   <div className="lg:flex items-center gap-6">
     //     <li>
     //       <NavLink to="/">Home</NavLink>
@@ -67,7 +66,7 @@ const Navbar = () => {
                 {user?.email && (
                   <details>
                     <summary>Dashboard</summary>
-                    <ul className="p-2 w-40 bg-blue-50">
+                    <ul className="p-2 w-44 rounded-md">
                       <li>
                         <Link to="add_service">Add Service</Link>
                       </li>
@@ -90,24 +89,26 @@ const Navbar = () => {
             <Link to="/">
               <div className="flex items-center gap-1">
                 <img src={logo} className="w-12" alt="" />
-                <span className="hidden md:inline">Skill Crafters</span>
+                <p className="hidden md:inline">
+                  Skill<span className="text-sky-400">Crafters</span>
+                </p>
               </div>
             </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 z-10">
-            <li>
+          <ul className="menu menu-horizontal px-1 z-10 text-gray-600 ">
+            <li className="text-base">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li>
+            <li className="text-base">
               <NavLink to="/all_services">All Services</NavLink>
             </li>
-            <li>
+            <li className="text-base">
               {user?.email && (
                 <details>
                   <summary>Dashboard</summary>
-                  <ul className="p-2 w-40 bg-blue-50">
+                  <ul className="p-2 w-44 bg-blue-50 ">
                     <li>
                       <Link to="add_service">Add Service</Link>
                     </li>

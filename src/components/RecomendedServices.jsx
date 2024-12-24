@@ -13,7 +13,6 @@ const RecomendedServices = () => {
        });
      }, []);
      const sortedServices = services.sort((a, b) => b.price - a.price);
-     console.log(sortedServices)
 
     return (
       <div className="px-4">
