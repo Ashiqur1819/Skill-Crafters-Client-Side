@@ -4,13 +4,14 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 const BookNow = () => {
 
     const navigate = useNavigate()
     const {user} = useContext(AuthContext);
     const userEmail = user?.email;
-    const userName = user?.displayName
+    const userName = user?.displayName;
     const service = useLoaderData();
     const {
       _id,
@@ -24,26 +25,38 @@ const BookNow = () => {
 
     const handlePurchaseService = e => {
       e.preventDefault();
-      const date = e.target.date.value;
-      service.takingDate = date
-      service.userName = userName
-      service.userEmail = userEmail
-      service.serviceStatus = "Pending"
+      const form = e.target
 
-      const {_id, ...rest} = service
+      const serviceId = form.serviceId.value
+      const serviceName = form.serviceName.value
+      const serviceImage = form.serviceImage.value
+      const providerName = form.providerName.value
+      const providerEmail = form.providerEmail.value
+      const userName = form.userName.value
+      const userEmail = form.userEmail.value
+      const date = form.date.value
+      const serviceArea = form.serviceArea.value
+      const price = form.price.value
+      const serviceStatus = "Pending"
+
+      const bookedServices = {serviceId, serviceName, serviceImage, providerName, providerEmail, userName, userEmail, date, serviceArea, price, serviceStatus}
       
       // Send data from client side to server side
-      axios.post("http://localhost:3000/booked_services", rest)
-      .then(res => {
-        if(res.data.insertedId){
-                Swal.fire({
-                  icon: "success",
-                  title: "Congratulations",
-                  text: `${service.serviceName} added successfully`,
-                });
-              }
-              navigate("/booked_services");
-      })
+      axios
+        .post("http://localhost:3000/booked_services", bookedServices)
+        .then((res) => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              icon: "success",
+              title: "Congratulations",
+              text: `${service.serviceName} added successfully`,
+            });
+          }
+          navigate("/booked_services");
+        })
+        .catch(err => {
+          toast.error(err.response.data)
+        })
     }
     return (
       <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
@@ -64,7 +77,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="id"
+                name="serviceId"
                 defaultValue={_id}
                 readOnly
                 placeholder="Service id"
@@ -79,7 +92,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="name"
+                name="serviceName"
                 defaultValue={serviceName}
                 readOnly
                 placeholder="Service name"
@@ -94,7 +107,7 @@ const BookNow = () => {
               </label>
               <input
                 type="url"
-                name="image"
+                name="serviceImage"
                 defaultValue={serviceImage}
                 readOnly
                 placeholder="Service image"
@@ -109,7 +122,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="provider_name"
+                name="providerName"
                 defaultValue={providerName}
                 readOnly
                 placeholder="Provider name"
@@ -124,7 +137,7 @@ const BookNow = () => {
               </label>
               <input
                 type="email"
-                name="provider_email"
+                name="providerEmail"
                 defaultValue={providerEmail}
                 placeholder="Provider email"
                 className="input input-bordered text-gray-500"
@@ -138,7 +151,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="user_name"
+                name="userName"
                 defaultValue={userName}
                 readOnly
                 placeholder="User name"
@@ -153,7 +166,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="user_email"
+                name="userEmail"
                 defaultValue={userEmail}
                 readOnly
                 placeholder="User email"
@@ -181,7 +194,7 @@ const BookNow = () => {
               </label>
               <input
                 type="text"
-                name="area"
+                name="serviceArea"
                 defaultValue={serviceArea}
                 placeholder="Area"
                 className="input input-bordered text-gray-500"
