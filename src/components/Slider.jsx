@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
-    <div>
+    <div className="relative z-0">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
           <div
-            className="h-[550px] flex items-center"
+            className="h-[400px] md:h-[550px] flex items-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${s1})`,
               backgroundPosition: "center",
@@ -21,8 +21,8 @@ const Slider = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="max-w-3xl p-20">
-              <h2 className="text-7xl font-bold text-yellow-400 mb-6">
+            <div className="max-w-3xl p-6 md:p-12 lg:p-20">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-yellow-400 mb-6">
                 Unlock the Power of Learning
               </h2>
               <p className="text-white mb-6">
@@ -38,7 +38,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="h-[550px] flex items-center"
+            className="h-[400px] md:h-[550px] flex items-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${s2})`,
               backgroundPosition: "center",
@@ -46,8 +46,8 @@ const Slider = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="max-w-3xl p-20">
-              <h2 className="text-7xl font-bold text-yellow-400 mb-6">
+            <div className="max-w-3xl p-6 md:p-12 lg:p-20">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-yellow-400 mb-6">
                 Learn Anytime, Anywhere
               </h2>
               <p className="text-white mb-6">
@@ -63,7 +63,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="h-[550px] flex items-center"
+            className="h-[400px] md:h-[550px] flex items-center"
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${s3})`,
               backgroundPosition: "center",
@@ -71,11 +71,11 @@ const Slider = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="max-w-4xl p-20">
-              <h2 className="text-7xl font-bold text-yellow-400 mb-6">
+            <div className="max-w-4xl p-6 md:p-12 lg:p-20">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-yellow-400 mb-6">
                 Transform Your Education Experience
               </h2>
-              <p className="text-white mb-6">
+              <p className="text-white mb-8">
                 Experience a new way of learning that’s engaging, effective, and
                 fun. Our innovative tools and techniques are designed to make
                 education more accessible than ever.

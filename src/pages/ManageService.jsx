@@ -54,7 +54,7 @@ const ManageService = () => {
       <div>
         <div className="overflow-x-auto">
           <h2 className="text-3xl font-bold text-black mb-3">
-            My Posted Services
+            My Added Services
           </h2>
           {!services.length == 0 ? (
             <table className="table">
@@ -106,11 +106,11 @@ const ManageService = () => {
           ) : (
             <div className="bg-blue-50 h-96 flex flex-col items-center justify-center text-center rounded-md">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500">
-                No Services Booked Yet
+                You Haven't Added Any Services Yet!
               </h2>
               <p className="text-gray-600 mt-6">
-                It seems like you haven’t booked any services. <br />
-                Start exploring and make your first booking today!
+                Get started by adding your first service to showcase your
+                offerings!
               </p>
               <div className="flex items-center justify-center mt-10">
                 <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">

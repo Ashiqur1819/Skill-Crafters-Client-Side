@@ -16,11 +16,14 @@ const BookedServices = () => {
   },[setBookServices])
 
   return (
-    <div className="px:4 md:px-6 lg:px-8 mt-12">
+    <div className="px-4 md:px-6 lg:px-8 mt-12">
       <Helmet>
         <title>Booked Services | Skill Crafters</title>
       </Helmet>
-      <div>
+      <div >
+        <h2 className="text-3xl font-bold text-black mb-3">
+          My Booked Services
+        </h2>
         <div className="overflow-x-auto">
           {!bookedServices.length == 0 ? (
             <table className="table">
@@ -53,7 +56,18 @@ const BookedServices = () => {
                       ${service.price}
                     </td>
                     <td className={`text-base text-gray-700 font-medium`}>
-                      <p className={`${service.serviceStatus === "Pending" && "bg-red-400"} ${service.serviceStatus === "Working" && "bg-yellow-400"} ${service.serviceStatus === "Completed" && "bg-green-400"} text-center py-1 rounded-md`}>{service.serviceStatus}</p>
+                      <p
+                        className={`${
+                          service.serviceStatus === "Pending" && "bg-red-400"
+                        } ${
+                          service.serviceStatus === "Working" && "bg-yellow-400"
+                        } ${
+                          service.serviceStatus === "Completed" &&
+                          "bg-green-400"
+                        } text-center py-1 px-2 rounded-md`}
+                      >
+                        {service.serviceStatus}
+                      </p>
                     </td>
                   </tr>
                 ))}

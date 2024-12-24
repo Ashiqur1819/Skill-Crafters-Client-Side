@@ -34,7 +34,7 @@ const Navbar = () => {
     // );
 
     return (
-      <div className="navbar px-3 md:px-6 lg:px-12 py-6 bg-blue-50">
+      <div className="navbar px-4 md:px-8 lg:px-10 py-6 bg-blue-50">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden mr-2">
@@ -86,10 +86,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-lg text-teal-500 md:text-3xl font-bold flex items-center gap-1">
-            <img src={logo} className="w-12" alt="" />
-            <span className="hidden md:inline">Skill Crafters</span>
-          </a>
+          <div className="text-lg text-teal-500 md:text-3xl font-bold">
+            <Link to="/">
+              <div className="flex items-center gap-1">
+                <img src={logo} className="w-12" alt="" />
+                <span className="hidden md:inline">Skill Crafters</span>
+              </div>
+            </Link>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 z-10">
@@ -138,7 +142,7 @@ const Navbar = () => {
               <button onClick={logOut}>
                 <Link
                   to="/"
-                  className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
+                  className="py-2 px-6 md:text-lg rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
                 >
                   Log Out
                 </Link>

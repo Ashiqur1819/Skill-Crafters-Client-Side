@@ -5,23 +5,25 @@ import logo from "../assets/skill.png"
 const Footer = () => {
     return (
       <div>
-        <footer className="bg-gray-200 mt-20">
+        <footer className="bg-blue-50 mt-20">
           <div className=" max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 lg:gap-24 px-4 md:px-8 lg:px-12 p-12">
             <div>
-              <h2 className="text-5xl font-bold flex items-center gap-2">
+              <h2 className="text-4xl md:text-5xl font-bold flex items-center gap-2">
                 <img src={logo} className="w-20" alt="" />
-                <span className="text-teal-500">Skill<span className="text-sky-400">Crafters</span></span>
+                <span className="text-teal-500">
+                  Skill<span className="text-sky-400">Crafters</span>
+                </span>
               </h2>
-              <p className="mt-3">
+              <p className="mt-3 pr-4">
                 Empowering learners with comprehensive courses, expert guidance,
                 and valuable resources designed to help individuals master new
                 skills and achieve their personal and professional goals.
               </p>
             </div>
             <div className="flex md:items-end flex-col justify-end">
-              <div className="mt-6 flex flex-col gap-3">
+              <div className="mt-6 flex md:flex-col gap-3 justify-center">
                 <a
-                  className="text-2xl flex items-center gap-3 border p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+                  className="text-2xl w-40 flex justify-center  items-center gap-3 border p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
                   href="https://www.facebook.com/Aashiq1819"
                   target="_blank"
                 >
@@ -29,7 +31,7 @@ const Footer = () => {
                   <span className="text-xl">Facebook</span>
                 </a>
                 <a
-                  className="text-2xl flex items-center gap-3 border p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+                  className="text-2xl w-40 flex justify-center  items-center gap-3 border p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
                   href="https://www.linkedin.com/in/ashiqurrahman2745/"
                   target="_blank"
                 >
