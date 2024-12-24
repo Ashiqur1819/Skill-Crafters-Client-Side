@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from '../components/Slider';
 import PopularServices from '../components/PopularServices';
 import { Helmet } from 'react-helmet-async';
+import ChooseUs from '../components/ChooseUs';
 
 const Home = () => {
     return (
@@ -13,7 +14,12 @@ const Home = () => {
           <Slider></Slider>
         </div>
         <div className="mt-20 max-w-7xl mx-auto px:4 md:px-6 lg:px-8">
-          <PopularServices></PopularServices>
+          <div>
+            <PopularServices></PopularServices>
+          </div>
+          <div className='mt-20'>
+            <ChooseUs></ChooseUs>
+          </div>
         </div>
       </div>
     );
