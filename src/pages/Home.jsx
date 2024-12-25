@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from '../components/Slider';
 import PopularServices from '../components/PopularServices';
 import { Helmet } from 'react-helmet-async';
 import ChooseUs from '../components/ChooseUs';
 import RecomendedServices from '../components/RecomendedServices';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Home = () => {
+
+    const {toggle} = useContext(AuthContext)
+
     return (
-      <div>
+      <div className={`${toggle ? "bg-white" : "bg-gray-950"}`}>
         <Helmet>
           <title>Home | Skill Crafters</title>
         </Helmet>

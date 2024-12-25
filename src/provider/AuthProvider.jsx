@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
+  const [toggle, setToggle] = useState(true)
 
   // Sign Up
   const createNewUser = (email, password) => {
@@ -59,6 +60,9 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, updatedData);
   };
 
+  // Toggle theme
+  const handleToggle = (status) => {};
+
   // On auth State change
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -86,6 +90,9 @@ const AuthProvider = ({ children }) => {
     email,
     setEmail,
     forgetPassword,
+    toggle,
+    setToggle,
+    handleToggle,
   };
 
   return (

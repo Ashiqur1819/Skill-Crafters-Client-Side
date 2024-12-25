@@ -1,10 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PopularServiceCard from "./PopularServiceCard";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const PopularServices = () => {
     const [services, setServices] = useState([]);
+    const {toggle} = useContext(AuthContext)
 
     useEffect(() => {
         axios.get("http://localhost:3000/services")
@@ -18,7 +20,11 @@ const PopularServices = () => {
         <h2 className="text-3xl md:text-5xl text-teal-500 text-center font-bold mb-3">
           Popular Services
         </h2>
-        <p className="max-w-3xl mx-auto text-center">
+        <p
+          className={`max-w-3xl mx-auto text-center  ${
+            toggle ? "text-gray-600" : "text-gray-400"
+          }`}
+        >
           Explore our top-rated educational services, from personalized tutoring
           to skill-building workshops, designed to empower learners of all ages.
           Unlock your potential today!

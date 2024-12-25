@@ -2,44 +2,32 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
 import logo from "../assets/skill.png"
+import { FaMoon } from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
+import logo2 from "../assets/skill2.png"
 
 const Navbar = () => {
 
-  const { user, logOut} = useContext(AuthContext);
+  const { user, logOut, toggle, setToggle, handleToggle } =
+    useContext(AuthContext);
 
-    //   <div className="lg:flex items-center gap-6">
-    //     <li>
-    //       <NavLink to="/">Home</NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to="/services">Services</NavLink>
-    //     </li>
-    //     {user && user?.email && (
-    //       <li>
-    //         <details>
-    //           <summary>Parent</summary>
-    //           <ul class="p-2">
-    //             <li>
-    //               <a>Submenu 1</a>
-    //             </li>
-    //             <li>
-    //               <a>Submenu 2</a>
-    //             </li>
-    //           </ul>
-    //         </details>
-    //       </li>
-    //     )}
-    //   </div>
-    // );
-
+    
     return (
-      <div className="navbar px-4 md:px-8 lg:px-10 py-6 bg-blue-50">
+      <div
+        className={`navbar px-4 md:px-8 lg:px-10 py-6 ${
+          toggle ? "bg-blue-50" : "bg-gray-950"
+        }`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="lg:hidden mr-2">
+            <div
+              tabIndex={0}
+              role="button"
+              className={`lg:hidden mr-2 ${!toggle ? "text-white" : "text-gray-800"}`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7"
+                className="h-10 w-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -54,7 +42,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className={`menu dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow ${toggle ? "bg-base-100" : "bg-gray-950 text-gray-400"}`}
             >
               <li>
                 <NavLink to="/">Home</NavLink>
@@ -66,7 +54,7 @@ const Navbar = () => {
                 {user?.email && (
                   <details>
                     <summary>Dashboard</summary>
-                    <ul className="p-2 w-44 rounded-md">
+                    <ul className={`p-2 w-44 rounded-md ${toggle ? "bg-white" : "bg-gray-950"}`}>
                       <li>
                         <Link to="add_service">Add Service</Link>
                       </li>
@@ -83,12 +71,29 @@ const Navbar = () => {
                   </details>
                 )}
               </li>
+            <div
+              className={`md:mr-12 text-2xl border h-12 w-12 flex items-center justify-center rounded-full ${
+                toggle ? "bg-white" : "bg-gray-950"
+              }`}
+            >
+              {!toggle ? (
+                <button
+                  onClick={() => handleToggle(setToggle(!toggle))}
+                >
+                  <CiLight></CiLight>
+                </button>
+              ) : (
+                <button onClick={() => handleToggle(setToggle(!toggle))}>
+                  <FaMoon></FaMoon>
+                </button>
+              )}
+            </div>
             </ul>
           </div>
           <div className="text-lg text-teal-500 md:text-3xl font-bold">
             <Link to="/">
               <div className="flex items-center gap-1">
-                <img src={logo} className="w-12" alt="" />
+                <img src={ toggle ? logo : logo2} className="w-12" alt="" />
                 <p className="hidden md:inline">
                   Skill<span className="text-sky-400">Crafters</span>
                 </p>
@@ -97,7 +102,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 z-10 text-gray-600 ">
+          <ul
+            className={`menu menu-horizontal px-1 z-10 ${
+              toggle ? "text-gray-600" : "text-gray-400"
+            }`}
+          >
             <li className="text-base">
               <NavLink to="/">Home</NavLink>
             </li>
@@ -108,7 +117,7 @@ const Navbar = () => {
               {user?.email && (
                 <details>
                   <summary>Dashboard</summary>
-                  <ul className="p-2 w-44 bg-blue-50 ">
+                  <ul className={`p-2 w-44 ${toggle ? "bg-blue-50" : "bg-gray-950"}`}>
                     <li>
                       <Link to="add_service">Add Service</Link>
                     </li>
@@ -125,6 +134,24 @@ const Navbar = () => {
                 </details>
               )}
             </li>
+            <div
+              className={`md:ml-24 text-2xl border h-12 w-12 flex items-center justify-center rounded-full ${
+                toggle ? "bg-white" : "bg-gray-950"
+              }`}
+            >
+              {!toggle ? (
+                <button
+                  className="text-white"
+                  onClick={() => handleToggle(setToggle(!toggle))}
+                >
+                  <CiLight></CiLight>
+                </button>
+              ) : (
+                <button className="text-black" onClick={() => handleToggle(setToggle(!toggle))}>
+                  <FaMoon></FaMoon>
+                </button>
+              )}
+            </div>
           </ul>
         </div>
         <div className="navbar-end">

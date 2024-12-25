@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import AllServiceCard from "../components/AllServiceCard";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AllServices = () => {
 
   const services = useLoaderData();
   const [searchItem, setSearchItem] = useState("");
+  const {toggle} = useContext(AuthContext)
 
 
   const filteredServices = services.filter((service) =>
@@ -20,18 +22,22 @@ const AllServices = () => {
         <title>Services | Skill Crafters</title>
       </Helmet>
       <div className="mt-6">
-        <label className="input input-bordered flex items-center gap-2">
+        <label
+          className={`input input-bordered flex items-center gap-2 ${
+            toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
+          }`}
+        >
           <input
             onChange={(e) => setSearchItem(e.target.value)}
             type="text"
-            className="grow"
+            className={`grow ${toggle ? "text-gray-700" : "text-gray-200"}`}
             placeholder="Search"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
-            className="h-5 w-5 "
+            className={`h-5 w-5 ${toggle ? "text-gray-700" : "text-gray-300"}`}
           >
             <path
               fillRule="evenodd"

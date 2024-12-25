@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
@@ -13,10 +15,15 @@ const ServiceDetails = () => {
     serviceArea,
     description,
   } = service;
+  const {toggle} = useContext(AuthContext)
 
   return (
     <div className="px-4">
-      <div className="p-6 md:p-12 mt-12 max-w-5xl mx-auto rounded-md bg-blue-50">
+      <div
+        className={`p-6 md:p-12 mt-12 max-w-5xl mx-auto rounded-md ${
+          toggle ? "bg-blue-50" : "bg-zinc-950 border border-gray-700"
+        }`}
+      >
         <Helmet>
           <title>Service Details | Skill Crafters</title>
         </Helmet>
@@ -33,15 +40,23 @@ const ServiceDetails = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-teal-500 mb-3 mt-3 md:mt-0">
               {serviceName}
             </h2>
-            <p className="text-lg font-semibold">
+            <p
+              className={`text-lg font-semibold ${
+                toggle ? "text-gray-800" : "text-gray-300"
+              }`}
+            >
               Price:{" "}
-              <span className="font-medium text-base text-gray-600">
+              <span className="font-medium text-base text-gray-500">
                 ${price}/month
               </span>
             </p>
-            <p className="text-lg font-semibold text-justify">
+            <p
+              className={`text-lg font-semibold ${
+                toggle ? "text-gray-800" : "text-gray-300"
+              }`}
+            >
               Description:{" "}
-              <span className="font-medium text-gray-600 text-base">
+              <span className="font-medium text-gray-500 text-base">
                 {description}
               </span>
             </p>
@@ -52,12 +67,20 @@ const ServiceDetails = () => {
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div>
-                <p className="text-gray-800 text-lg font-semibold">
+                <p
+                  className={`text-lg font-semibold ${
+                    toggle ? "text-gray-800" : "text-gray-300"
+                  }`}
+                >
                   {providerName}
                 </p>
-                <p className="text-gray-700 font-medium text-base">
+                <p
+                  className={`text-base font-semibold ${
+                    toggle ? "text-gray-800" : "text-gray-300"
+                  }`}
+                >
                   Location:{" "}
-                  <span className="font-medium text-gray-600 text-sm">
+                  <span className="font-medium text-gray-500 text-sm">
                     {serviceArea}
                   </span>
                 </p>

@@ -11,6 +11,7 @@ const ManageService = () => {
 
   const {user} = useContext(AuthContext);
   const [services, setServices] = useState([]);
+  const {toggle} = useContext(AuthContext)
 
   useEffect(() => {
     axios.get(`http://localhost:3000/service/${user?.email}`)
@@ -47,13 +48,17 @@ const ManageService = () => {
   }
 
   return (
-    <div className="px-4 md:px-6 lg:px-8 mt-12">
+    <div
+      className={`px-4 md:px-6 lg:px-8 mt-12 ${
+        toggle ? "bg-white" : "bg-zinc-950"
+      }`}
+    >
       <Helmet>
         <title>Manage Service | Skill Crafters</title>
       </Helmet>
       <div>
         <div className="overflow-x-auto">
-          <h2 className="text-3xl font-bold text-black mb-3">
+          <h2 className={`text-3xl font-bold mb-6 ${toggle ? "text-black" : "text-gray-200"}`}>
             My Added Services
           </h2>
           {!services.length == 0 ? (
@@ -104,11 +109,11 @@ const ManageService = () => {
               </tbody>
             </table>
           ) : (
-            <div className="bg-blue-50 h-96 flex flex-col items-center justify-center text-center rounded-md">
+            <div className={`h-96 flex flex-col items-center justify-center text-center rounded-md ${toggle ? "bg-blue-50" : "bg-gray-800"}`}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500">
                 You Haven't Added Any Services Yet!
               </h2>
-              <p className="text-gray-600 mt-6">
+              <p className="text-gray-400 mt-6">
                 Get started by adding your first service to showcase your
                 offerings!
               </p>

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
 
+  const {toggle} = useContext(AuthContext)
   const navigate = useNavigate()
   const {user} = useContext(AuthContext);
   const providerName = user?.displayName;
@@ -39,7 +40,11 @@ const AddService = () => {
 
   return (
     <div className="px-4">
-      <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
+      <div
+        className={`card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 rounded-md ${
+          toggle ? "bg-white " : "bg-zinc-900 border border-gray-600"
+        }`}
+      >
         <Helmet>
           <title>Add Service | Skill Crafters</title>
         </Helmet>
@@ -50,7 +55,11 @@ const AddService = () => {
           <div className="divider my-2"></div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Service Image URL:
               </span>
             </label>
@@ -58,12 +67,18 @@ const AddService = () => {
               type="url"
               name="serviceImage"
               placeholder="Service image url"
-              className="input input-bordered"
+              className={`input input-bordered ${
+                toggle ? "bg-white" : "bg-gray-800"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Service Name:
               </span>
             </label>
@@ -71,12 +86,18 @@ const AddService = () => {
               type="text"
               name="serviceName"
               placeholder="Service name"
-              className="input input-bordered"
+              className={`input input-bordered ${
+                toggle ? "bg-white" : "bg-gray-800"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Service Price:
               </span>
             </label>
@@ -84,12 +105,18 @@ const AddService = () => {
               type="number"
               name="price"
               placeholder="Service price"
-              className="input input-bordered"
+              className={`input input-bordered ${
+                toggle ? "bg-white" : "bg-gray-800"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Service Area:
               </span>
             </label>
@@ -97,12 +124,18 @@ const AddService = () => {
               type="text"
               name="serviceArea"
               placeholder="Service area"
-              className="input input-bordered"
+              className={`input input-bordered ${
+                toggle ? "bg-white" : "bg-gray-800"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Description:
               </span>
             </label>
@@ -110,7 +143,9 @@ const AddService = () => {
               type="text"
               name="description"
               placeholder="Description"
-              className="input input-bordered"
+              className={`input input-bordered ${
+                toggle ? "bg-white" : "bg-gray-800"
+              }`}
             />
           </div>
           <div className="form-control mt-4">

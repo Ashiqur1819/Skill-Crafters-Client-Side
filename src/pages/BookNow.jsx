@@ -13,6 +13,7 @@ const BookNow = () => {
     const userEmail = user?.email;
     const userName = user?.displayName;
     const service = useLoaderData();
+    const {toggle} = useContext(AuthContext)
     const {
       _id,
       serviceImage,
@@ -59,8 +60,12 @@ const BookNow = () => {
         })
     }
     return (
-      <div className='px-4'>
-        <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
+      <div className="px-4">
+        <div
+          className={`card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 rounded-md ${
+            toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
+          }`}
+        >
           <Helmet>
             <title>Book Now | Skill Crafters</title>
           </Helmet>
@@ -69,10 +74,14 @@ const BookNow = () => {
               <h2 className="text-4xl font-bold text-sky-400 text-center">
                 Book Now
               </h2>
-              <div className="divider my-2"></div>
+              <div className="divider divider-accent my-2"></div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     ServiceId :
                   </span>
                 </label>
@@ -82,12 +91,18 @@ const BookNow = () => {
                   defaultValue={_id}
                   readOnly
                   placeholder="Service id"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Service Name:
                   </span>
                 </label>
@@ -97,12 +112,18 @@ const BookNow = () => {
                   defaultValue={serviceName}
                   readOnly
                   placeholder="Service name"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Service Image:
                   </span>
                 </label>
@@ -112,12 +133,18 @@ const BookNow = () => {
                   defaultValue={serviceImage}
                   readOnly
                   placeholder="Service image"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Provider Name:
                   </span>
                 </label>
@@ -127,12 +154,18 @@ const BookNow = () => {
                   defaultValue={providerName}
                   readOnly
                   placeholder="Provider name"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Provider Email:
                   </span>
                 </label>
@@ -141,12 +174,18 @@ const BookNow = () => {
                   name="providerEmail"
                   defaultValue={providerEmail}
                   placeholder="Provider email"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     User Name:
                   </span>
                 </label>
@@ -156,12 +195,18 @@ const BookNow = () => {
                   defaultValue={userName}
                   readOnly
                   placeholder="User name"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     User Email:
                   </span>
                 </label>
@@ -171,12 +216,18 @@ const BookNow = () => {
                   defaultValue={userEmail}
                   readOnly
                   placeholder="User email"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Service Taking Date:
                   </span>
                 </label>
@@ -184,12 +235,18 @@ const BookNow = () => {
                   type="date"
                   name="date"
                   placeholder="Date"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Service Area:
                   </span>
                 </label>
@@ -198,12 +255,18 @@ const BookNow = () => {
                   name="serviceArea"
                   defaultValue={serviceArea}
                   placeholder="Area"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text text-base font-medium">
+                  <span
+                    className={`label-text text-base font-medium ${
+                      toggle ? "text-gray-800" : "text-gray-300"
+                    }`}
+                  >
                     Price:
                   </span>
                 </label>
@@ -213,7 +276,9 @@ const BookNow = () => {
                   defaultValue={price}
                   readOnly
                   placeholder="Price"
-                  className="input input-bordered text-gray-500"
+                  className={`input input-bordered text-gray-400 ${
+                    toggle ? "bg-white" : "bg-gray-800"
+                  }`}
                 />
               </div>
               <div className="form-control mt-4">
