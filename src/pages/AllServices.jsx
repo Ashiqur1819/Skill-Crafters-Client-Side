@@ -1,19 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import AllServiceCard from "../components/AllServiceCard";
 import { AuthContext } from "../provider/AuthProvider";
+import axios from "axios";
 
 const AllServices = () => {
 
-  const services = useLoaderData();
-  const [searchItem, setSearchItem] = useState("");
+  const [services, setServices] = useState([])
+  const [search, setSearch] = useState("");
   const {toggle} = useContext(AuthContext)
 
-
-  const filteredServices = services.filter((service) =>
-    service.serviceName.toLowerCase().includes(searchItem.toLowerCase())
-  );
+  useEffect(() => {
+    axios.get(`http://localhost:3000/services?search=${search}`)
+    .then((res) => {
+      setServices(res.data);
+    });
+  }, [search, setServices]);
 
 
   return (
@@ -28,7 +31,7 @@ const AllServices = () => {
           }`}
         >
           <input
-            onChange={(e) => setSearchItem(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
             type="text"
             className={`grow ${toggle ? "text-gray-700" : "text-gray-200"}`}
             placeholder="Search"
@@ -48,7 +51,7 @@ const AllServices = () => {
         </label>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {filteredServices.map((service) => (
+        {services.map((service) => (
           <AllServiceCard service={service} key={service._id}></AllServiceCard>
         ))}
       </div>
