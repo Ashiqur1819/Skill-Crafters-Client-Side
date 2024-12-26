@@ -11,7 +11,7 @@ const AllServices = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/all-services?search=${search}`)
+      .get(`https://skill-crafters-server-side.vercel.app/all-services?search=${search}`)
       .then((res) => {
         setServices(res.data);
       });

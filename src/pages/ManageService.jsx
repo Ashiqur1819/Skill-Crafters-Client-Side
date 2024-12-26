@@ -15,7 +15,8 @@ const ManageService = () => {
   const axiosSecure = useAxios();
 
   useEffect(() => {
-    axiosSecure.get(`/service/${user?.email}`).then((res) => {
+    axiosSecure.get(`/service/${user?.email}`)
+    .then((res) => {
       setServices(res.data);
     });
   }, []);
@@ -31,10 +32,7 @@ const ManageService = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:3000/services/${id}`, {
-            withCredentials: true,
-          })
+        axiosSecure.delete(`/services/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({

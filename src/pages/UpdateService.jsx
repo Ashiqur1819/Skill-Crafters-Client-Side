@@ -28,7 +28,7 @@ const UpdateService = () => {
 
     //  Send data from client side to server side
     axios
-      .put(`http://localhost:3000/services/${_id}`, updatedService)
+      .put(`https://skill-crafters-server-side.vercel.app/services/${_id}`, updatedService)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           Swal.fire({

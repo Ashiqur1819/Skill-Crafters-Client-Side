@@ -59,35 +59,35 @@
     "description": "Learn to play instruments like piano, guitar, and violin from experienced teachers. Our lessons include music theory, practice techniques, and performance skills. Build a solid foundation in music while exploring creativity and enjoying the joy of self-expression through melodies."
   },
   {
-    "serviceImage": "https://example.com/images/public-speaking.jpg",
+    "serviceImage": "https://i.ibb.co.com/xMSPy2L/Public-Speaking.webp",
     "serviceName": "Public Speaking",
     "price": "140",
     "serviceArea": "Mymensingh",
     "description": "Master public speaking with expert coaching. Learn to craft compelling speeches, refine delivery, and build confidence. Tailored lessons focus on overcoming stage fright, structuring arguments, and engaging diverse audiences effectively for personal and professional growth."
   },
   {
-    "serviceImage": "https://example.com/images/college-counseling.jpg",
+    "serviceImage": "https://i.ibb.co.com/B2CSzNK/College-Counseling.webp",
     "serviceName": "College Counseling",
     "price": "300",
     "serviceArea": "Comilla",
     "description": "Expert guidance on college admissions, application strategies, and essay writing. Our counselors work closely with students to identify their strengths, build competitive profiles, and prepare for interviews. Achieve your educational dreams with step-by-step, personalized support."
   },
   {
-    "serviceImage": "https://example.com/images/fitness-classes.jpg",
+    "serviceImage": "https://i.ibb.co.com/RSsYzSV/Fitness-Classes.jpg",
     "serviceName": "Fitness Classes",
     "price": "60",
     "serviceArea": "Gazipur",
     "description": "Stay fit with yoga, Pilates, and aerobics classes designed for all levels. Professional instructors provide personalized guidance to meet fitness goals. Improve flexibility, strength, and overall health while enjoying an engaging and supportive community environment."
   },
   {
-    "serviceImage": "https://example.com/images/financial-literacy.jpg",
+    "serviceImage": "https://i.ibb.co.com/Y7D3wnG/Financial-Literacy.webp",
     "serviceName": "Financial Literacy",
     "price": "75",
     "serviceArea": "Narayanganj",
     "description": "Learn essential money management skills, including budgeting, investing, and tax planning. Gain financial independence through practical lessons designed for students, professionals, and families. Build a secure financial future with our comprehensive training."
   },
   {
-    "serviceImage": "https://example.com/images/tech-skills.jpg",
+    "serviceImage": "https://i.ibb.co.com/BcsVCDF/Tech-Skills-Training.jpg",
     "serviceName": "Tech Skills Training",
     "price": "250",
     "serviceArea": "Bogura",
