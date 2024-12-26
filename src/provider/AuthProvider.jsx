@@ -10,8 +10,8 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { toast } from "react-toastify";
 import auth from "../firebase/firebase.init";
+import axios from "axios";
 
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(true);
 
   // Sign Up
   const createNewUser = (email, password) => {
@@ -42,11 +42,7 @@ const AuthProvider = ({ children }) => {
 
   // Log Out
   const logOut = () => {
-    signOut(auth).then((result) => {
-      toast.success("You've successfully logged out. See you soon!");
-      setUser(result);
-      return;
-    });
+    return signOut(auth);
   };
 
   //  Forget password
@@ -66,11 +62,29 @@ const AuthProvider = ({ children }) => {
   // On auth State change
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (user) {
-        setUser(null);
-      }
       setUser(currentUser);
-      setLoading(false);
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+        axios
+          .post("http://localhost:3000/jwt", user, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            setLoading(false);
+          });
+      } else {
+        axios
+          .post(
+            "http://localhost:3000/logout",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            setLoading(false);
+          });
+      }
     });
 
     return () => {

@@ -1,10 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import useAxios from "../hooks/useAxios";
 
 const ServiceDetails = () => {
-  const service = useLoaderData();
+  const [service, setService] = useState([]);
+  const { id } = useParams();
+  const axiosSecure = useAxios();
+
+  useEffect(() => {
+    axiosSecure.get(`/services/${id}`).then((res) => {
+      setService(res.data);
+    });
+  }, [id, setService]);
+
   const {
     _id,
     serviceImage,
@@ -15,7 +25,7 @@ const ServiceDetails = () => {
     serviceArea,
     description,
   } = service;
-  const {toggle} = useContext(AuthContext)
+  const { toggle } = useContext(AuthContext);
 
   return (
     <div className="px-4">

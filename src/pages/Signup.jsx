@@ -8,11 +8,12 @@ import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser, setUser, updateUserProfile, loginWithGoogle } =useContext(AuthContext);
-  const {toggle} = useContext(AuthContext)
+  const { createNewUser, setUser, updateUserProfile, loginWithGoogle } =
+    useContext(AuthContext);
+  const { toggle } = useContext(AuthContext);
   const navigate = useNavigate();
-    const location = useLocation();
-    const from = location?.state ? location.state : "/";
+  const location = useLocation();
+  const from = location?.state ? location.state : "/";
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -26,8 +27,6 @@ const Signup = () => {
     createNewUser(email, password)
       .then((result) => {
         setUser(result.user);
-        toast.success(`Sign-up successful!`);
-        navigate("/");
 
         updateUserProfile({ displayName: name, photoURL: photo }).then(() => {
           setUser((prev) => ({
@@ -35,6 +34,7 @@ const Signup = () => {
             displayName: name,
             photoURL: photo,
           }));
+          toast.success(`Sign-up successful!`);
           navigate("/");
         });
       })
@@ -46,8 +46,8 @@ const Signup = () => {
   };
 
   const handleGoogleLogin = () => {
-      loginWithGoogle()
-      .then(result => {
+    loginWithGoogle()
+      .then((result) => {
         setUser(result.user);
         toast.success(`Google login successful!`);
         navigate(from);
@@ -56,8 +56,8 @@ const Signup = () => {
         toast.error(
           "Google login failed. Please check your connection and try again."
         );
-      })
-    }
+      });
+  };
 
   return (
     <div className="px-4">

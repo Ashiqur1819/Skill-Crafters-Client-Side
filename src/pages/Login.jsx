@@ -11,7 +11,7 @@ const Login = () => {
   const { userLogin, setUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const {toggle} = useContext(AuthContext)
+  const { toggle } = useContext(AuthContext);
   const from = location?.state ? location.state : "/";
 
   const handleLogin = (e) => {
@@ -34,17 +34,17 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     loginWithGoogle()
-    .then(result => {
-      setUser(result.user);
-      toast.success(`Google login successful!`);
-      navigate(from);
-    })
-    .catch(() => {
-      toast.error(
-        "Google login failed. Please check your connection and try again."
-      );
-    })
-  }
+      .then((result) => {
+        setUser(result.user);
+        toast.success(`Google login successful!`);
+        navigate(from);
+      })
+      .catch(() => {
+        toast.error(
+          "Google login failed. Please check your connection and try again."
+        );
+      });
+  };
 
   return (
     <div className="px-4">
@@ -115,7 +115,9 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className={`absolute right-4 top-[57px] ${toggle ? "text-gray-800" : "text-gray-200"}`}
+                className={`absolute right-4 top-[57px] ${
+                  toggle ? "text-gray-800" : "text-gray-200"
+                }`}
               >
                 {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </button>

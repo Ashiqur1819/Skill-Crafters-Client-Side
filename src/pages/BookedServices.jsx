@@ -1,20 +1,19 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 
 const BookedServices = () => {
-  const {user} = useContext(AuthContext);
-  const {toggle} = useContext(AuthContext)
-  const [bookedServices, setBookServices] = useState([])
+  const { user } = useContext(AuthContext);
+  const { toggle } = useContext(AuthContext);
+  const [bookedServices, setBookServices] = useState([]);
+  const axiosSecure = useAxios();
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/booked_services/${user?.email}`)
-      .then((res) => {
-        setBookServices(res.data);
-      });
-  },[setBookServices])
+    axiosSecure.get(`/booked_services/${user?.email}`).then((res) => {
+      setBookServices(res.data);
+    });
+  }, [setBookServices]);
 
   return (
     <div className="px-4 md:px-6 lg:px-8 mt-12">
@@ -80,7 +79,9 @@ const BookedServices = () => {
             </table>
           ) : (
             <div
-              className={`h-96 flex flex-col items-center justify-center text-center rounded-md ${toggle ? "bg-blue-50" : "bg-gray-800"}`}
+              className={`h-96 flex flex-col items-center justify-center text-center rounded-md ${
+                toggle ? "bg-blue-50" : "bg-gray-800"
+              }`}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500">
                 No Services Booked Yet

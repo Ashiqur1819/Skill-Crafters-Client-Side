@@ -1,37 +1,48 @@
-import axios from 'axios';
-import { useLoaderData, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxios from "../hooks/useAxios";
 
 const UpdateService = () => {
-    const navigate = useNavigate()
-  const service = useLoaderData();
-  const {_id, serviceImage, serviceName, price, serviceArea, description } =
+  const navigate = useNavigate();
+
+  const [service, setService] = useState([]);
+  const { id } = useParams();
+  const axiosSecure = useAxios();
+
+  useEffect(() => {
+    axiosSecure.get(`/services/${id}`).then((res) => {
+      setService(res.data);
+    });
+  }, [id, setService]);
+
+  const { _id, serviceImage, serviceName, price, serviceArea, description } =
     service;
 
-    const handleUpdateService = e => {
-        e.preventDefault()
-         const form = e.target;
-         const formData = new FormData(form);
-         const updatedService = Object.fromEntries(formData.entries());
+  const handleUpdateService = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedService = Object.fromEntries(formData.entries());
 
-        //  Send data from client side to server side
-        axios.put(`http://localhost:3000/services/${_id}`, updatedService)
-        .then(res => {
-            if (res.data.modifiedCount > 0) {
-              Swal.fire({
-                icon: "success",
-                title: "Congratulations",
-                text: `${service.serviceName} successfully updated`,
-              });
-            }
-            navigate("/manage_service");
-        })
-    }
-
+    //  Send data from client side to server side
+    axios
+      .put(`http://localhost:3000/services/${_id}`, updatedService)
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Congratulations",
+            text: `${service.serviceName} successfully updated`,
+          });
+        }
+        navigate("/manage_service");
+      });
+  };
 
   return (
-    <div className='px-4'>
+    <div className="px-4">
       <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
         <form onSubmit={handleUpdateService} className="card-body">
           <h2 className="text-4xl font-bold text-sky-500 text-center">

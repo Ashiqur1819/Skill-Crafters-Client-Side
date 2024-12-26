@@ -2,11 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import s1 from "../assets/1.jpg"
-import s2 from "../assets/2.jpg"
-import s3 from "../assets/3.webp"
+import s1 from "../assets/1.jpg";
+import s2 from "../assets/2.jpg";
+import s3 from "../assets/3.webp";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { easeInOut } from "motion";
 
 const Slider = () => {

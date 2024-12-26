@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
 import Swal from "sweetalert2";
+import useAxios from "../hooks/useAxios";
 
 const ManageService = () => {
-
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [services, setServices] = useState([]);
-  const {toggle} = useContext(AuthContext)
+  const { toggle } = useContext(AuthContext);
+  const axiosSecure = useAxios();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/service/${user?.email}`)
-    .then(res => {
-      setServices(res.data)
-    })
-  }, [])
+    axiosSecure.get(`/service/${user?.email}`).then((res) => {
+      setServices(res.data);
+    });
+  }, []);
 
-  const handleDeleteService = id => {
+  const handleDeleteService = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -31,21 +31,27 @@ const ManageService = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/services/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your service has been deleted.",
-              icon: "success",
-            });
+        axios
+          .delete(`http://localhost:3000/services/${id}`, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your service has been deleted.",
+                icon: "success",
+              });
 
-            const remaining = services.filter((service) => service._id !== id);
-            setServices(remaining);
-          }
-        });
+              const remaining = services.filter(
+                (service) => service._id !== id
+              );
+              setServices(remaining);
+            }
+          });
       }
     });
-  }
+  };
 
   return (
     <div
@@ -58,7 +64,11 @@ const ManageService = () => {
       </Helmet>
       <div>
         <div className="overflow-x-auto">
-          <h2 className={`text-3xl font-bold mb-6 ${toggle ? "text-black" : "text-gray-200"}`}>
+          <h2
+            className={`text-3xl font-bold mb-6 ${
+              toggle ? "text-black" : "text-gray-200"
+            }`}
+          >
             My Added Services
           </h2>
           {!services.length == 0 ? (
@@ -109,7 +119,11 @@ const ManageService = () => {
               </tbody>
             </table>
           ) : (
-            <div className={`h-96 flex flex-col items-center justify-center text-center rounded-md ${toggle ? "bg-blue-50" : "bg-gray-800"}`}>
+            <div
+              className={`h-96 flex flex-col items-center justify-center text-center rounded-md ${
+                toggle ? "bg-blue-50" : "bg-gray-800"
+              }`}
+            >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500">
                 You Haven't Added Any Services Yet!
               </h2>

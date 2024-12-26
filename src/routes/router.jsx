@@ -1,7 +1,6 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
-import Services from "../pages/AllServices";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import AddService from "../pages/AddService";
@@ -28,7 +27,6 @@ const router = createBrowserRouter([
       {
         path: "/all_services",
         element: <AllServices></AllServices>,
-        // loader: () => fetch("http://localhost:3000/services"),
       },
       {
         path: "/add_service",
@@ -69,8 +67,6 @@ const router = createBrowserRouter([
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id}`),
       },
       {
         path: "/book_now/:id",
@@ -79,14 +75,10 @@ const router = createBrowserRouter([
             <BookNow></BookNow>
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id}`),
       },
       {
         path: "/update_service/:id",
         element: <UpdateService></UpdateService>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id}`),
       },
       {
         path: "/signup",

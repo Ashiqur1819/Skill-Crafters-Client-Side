@@ -6,28 +6,26 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
-
-  const {toggle} = useContext(AuthContext)
-  const navigate = useNavigate()
-  const {user} = useContext(AuthContext);
+  const { toggle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const providerName = user?.displayName;
   const providerImage = user?.photoURL;
   const providerEmail = user?.email;
 
-  const handleAddService = e => {
+  const handleAddService = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
     const service = Object.fromEntries(formData.entries());
-    service.providerName = providerName
-    service.providerImage = providerImage
-    service.providerEmail = providerEmail
+    service.providerName = providerName;
+    service.providerImage = providerImage;
+    service.providerEmail = providerEmail;
 
     // Send service data from client side to server side
-    axios.post("http://localhost:3000/services", service)
-    .then(res => {
-      if(res.data.insertedId){
+    axios.post("http://localhost:3000/services", service).then((res) => {
+      if (res.data.insertedId) {
         Swal.fire({
           icon: "success",
           title: "Congratulations",
@@ -35,8 +33,8 @@ const AddService = () => {
         });
       }
       navigate("/manage_service");
-    })
-  }
+    });
+  };
 
   return (
     <div className="px-4">

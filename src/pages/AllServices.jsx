@@ -1,23 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
 import AllServiceCard from "../components/AllServiceCard";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 
 const AllServices = () => {
-
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState([]);
   const [search, setSearch] = useState("");
-  const {toggle} = useContext(AuthContext)
+  const { toggle } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/services?search=${search}`)
-    .then((res) => {
-      setServices(res.data);
-    });
+    axios
+      .get(`http://localhost:3000/all-services?search=${search}`)
+      .then((res) => {
+        setServices(res.data);
+      });
   }, [search, setServices]);
-
 
   return (
     <div className="px-4 md:px-6 lg:px-8">
