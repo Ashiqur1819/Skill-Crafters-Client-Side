@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddService = () => {
   const { toggle } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const AddService = () => {
       navigate("/manage_service");
     })
     .catch(err => {
-      console.log(err.message)
+      toast.error(err.message)
     })
   };
 
