@@ -66,7 +66,7 @@ const BookNow = () => {
 
     // Send data from client side to server side
     axios
-      .post("https://skill-crafters-server-side.vercel.app/booked_services", bookedServices)
+      .post("http://localhost:3000/booked_services", bookedServices)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

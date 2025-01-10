@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar px-4 md:px-8 lg:px-10 py-6 ${
+      className={`navbar px-4 md:px-8 lg:px-10 py-3 ${
         toggle ? "bg-blue-50" : "bg-gray-950"
       }`}
     >
@@ -115,7 +115,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul
-          className={`menu menu-horizontal px-1 z-10 ${
+          className={`menu menu-horizontal px-1 z-10 gap-6 ${
             toggle ? "text-gray-600" : "text-gray-400"
           }`}
         >
@@ -151,7 +151,7 @@ const Navbar = () => {
             )}
           </li>
           <div
-            className={`md:ml-24 text-2xl border h-12 w-12 flex items-center justify-center rounded-full ${
+            className={`md:ml-24 text-xl border border-teal-400 h-10 w-10 flex items-center justify-center rounded-full ${
               toggle ? "bg-white" : "bg-gray-950"
             }`}
           >
@@ -181,7 +181,7 @@ const Navbar = () => {
               data-tip={user?.displayName}
             >
               <img
-                className="w-10 md:w-12 rounded-full cursor-pointer"
+                className="w-11  rounded-full cursor-pointer"
                 src={user?.photoURL}
                 referrerPolicy="no-referrer"
                 alt=""
@@ -190,7 +190,7 @@ const Navbar = () => {
             <button onClick={handleLogOut}>
               <Link
                 to="/"
-                className="py-2 px-6 md:text-lg rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
+                className="py-2 px-4 rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
               >
                 Log Out
               </Link>
@@ -200,7 +200,7 @@ const Navbar = () => {
           <button>
             <Link
               to="/login"
-              className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
+              className="py-2 px-4 rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
             >
               Log In
             </Link>

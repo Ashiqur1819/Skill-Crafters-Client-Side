@@ -12,6 +12,7 @@ const BookedServices = () => {
   useEffect(() => {
     axiosSecure.get(`/booked_services/${user?.email}`).then((res) => {
       setBookServices(res.data);
+      console.log(res.data)
     });
   }, [setBookServices]);
 
@@ -29,7 +30,7 @@ const BookedServices = () => {
           My Booked Services
         </h2>
         <div className="overflow-x-auto">
-          {!bookedServices.length == 0 ? (
+          {!bookedServices?.length == 0 ? (
             <table className="table">
               <thead>
                 <tr className="text-lg text-sky-500">
@@ -41,7 +42,7 @@ const BookedServices = () => {
                 </tr>
               </thead>
               <tbody>
-                {bookedServices.map((service, index) => (
+                {bookedServices?.map((service, index) => (
                   <tr key={index}>
                     <td>
                       <img
@@ -50,27 +51,29 @@ const BookedServices = () => {
                         alt=""
                       />
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       {service.serviceName}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       {service.serviceArea}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       ${service.price}
                     </td>
                     <td className={`text-base text-white font-medium`}>
                       <p
                         className={`${
-                          service.serviceStatus === "Pending" && "bg-red-500"
+                          service?.serviceStatus === "Pending" &&
+                          "bg-red-500"
                         } ${
-                          service.serviceStatus === "Working" && "bg-yellow-400"
+                          service?.serviceStatus === "Working" &&
+                          "bg-yellow-500"
                         } ${
-                          service.serviceStatus === "Completed" &&
+                          service?.serviceStatus === "Completed" &&
                           "bg-green-400"
                         } text-center py-1 px-2 rounded-md`}
                       >
-                        {service.serviceStatus}
+                        {service?.serviceStatus}
                       </p>
                     </td>
                   </tr>

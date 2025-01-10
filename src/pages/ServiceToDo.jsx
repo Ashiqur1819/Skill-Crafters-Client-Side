@@ -4,25 +4,34 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 
-
 const ServiceToDo = () => {
-
   const [services, setServices] = useState();
-  const {user, toggle} = useContext(AuthContext)
+  const { user, toggle } = useContext(AuthContext);
 
-  useEffect( () => {
-
+  useEffect(() => {
     const fetchData = async () => {
-  const response = await axios.get(
-    `http://localhost:3000/booked-services/${user.email}`
-  );
-        setServices(response.data)
-    }
-    fetchData()
+      const response = await axios.get(
+        `http://localhost:3000/booked-services/${user.email}`
+      )
+      setServices(response.data)
+    };
+    
+    fetchData();
   }, [setServices, user]);
 
-  
-   return (
+
+      const handleStatusChange = async (e, id) => {
+        // send data to backend
+        const status = { status: e };
+        const response = await axios.patch(
+          `http://localhost:3000/status-update/${id}`,
+          status
+        );
+
+        console.log(response);
+      }
+
+  return (
     <div className="px-4 md:px-6 lg:px-8 mt-12">
       <Helmet>
         <title>Service To-Do | Skill Crafters</title>
@@ -33,7 +42,7 @@ const ServiceToDo = () => {
             toggle ? "text-black" : "text-gray-200"
           }`}
         >
-          My Booked Services
+          Manage Bookings
         </h2>
         <div className="overflow-x-auto">
           {!services?.length == 0 ? (
@@ -42,7 +51,7 @@ const ServiceToDo = () => {
                 <tr className="text-lg text-sky-500">
                   <th className="font-semibold">Service Image</th>
                   <th className="font-semibold">Service Name</th>
-                  <th className="font-semibold">Location</th>
+                  <th className="font-semibold">User Email</th>
                   <th className="font-semibold">Price</th>
                   <th className="font-semibold">Status</th>
                 </tr>
@@ -57,18 +66,35 @@ const ServiceToDo = () => {
                         alt=""
                       />
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       {service.serviceName}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
-                      {service.serviceArea}
+                    <td className="text-base text-gray-400 font-medium">
+                      {service.userEmail}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       ${service.price}
                     </td>
-                    <td className={`text-base font-medium`}>
+                    <td className={`text-base`}>
                       <p>
-                        <select onChange={(e) => handleStatusChange(service._id, service.serviceStatus, e.target.value)} className="select select-bordered max-w-xs">
+                        <select
+                          defaultValue={service.serviceStatus}
+                          onChange={(e) =>
+                            handleStatusChange(e.target.value, service._id)
+                          }
+                          className={`select select-bordered text-base font-medium ${
+                            !toggle ? "bg-gray-900" : "bg-white"
+                          } ${
+                            service.serviceStatus === "Pending" &&
+                            "text-red-500"
+                          } ${
+                            service.serviceStatus === "Working" &&
+                            "text-yellow-500"
+                          } ${
+                            service.serviceStatus === "Completed" &&
+                            "text-green-500"
+                          }`}
+                        >
                           <option defaultValue={service.serviceStatus}>
                             Pending
                           </option>
@@ -104,12 +130,6 @@ const ServiceToDo = () => {
       </div>
     </div>
   );
-  };
-
-  
-
-
- 
-
+};
 
 export default ServiceToDo;

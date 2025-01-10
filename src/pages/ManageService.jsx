@@ -90,13 +90,13 @@ const ManageService = () => {
                         alt=""
                       />
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       {service.serviceName}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       {service.serviceArea}
                     </td>
-                    <td className="text-base text-gray-500 font-medium">
+                    <td className="text-base text-gray-400 font-medium">
                       ${service.price}
                     </td>
                     <td className="flex items-center justify-start gap-6 text-xl mt-1">

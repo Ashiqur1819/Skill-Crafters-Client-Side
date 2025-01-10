@@ -25,7 +25,7 @@ const AddService = () => {
     service.providerEmail = providerEmail;
 
     // Send service data from client side to server side
-    axios.post("https://skill-crafters-server-side.vercel.app/services", service).then((res) => {
+    axios.post("http://localhost:3000/services", service).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           icon: "success",

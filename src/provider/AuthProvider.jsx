@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         axios
-          .post("https://skill-crafters-server-side.vercel.app/jwt", user, {
+          .post("http://localhost:3000/jwt", user, {
             withCredentials: true,
           })
           .then((res) => {
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
       } else {
         axios
           .post(
-            "https://skill-crafters-server-side.vercel.app/logout",
+            "http://localhost:3000/logout",
             {},
             {
               withCredentials: true,

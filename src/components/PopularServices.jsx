@@ -9,7 +9,7 @@ const PopularServices = () => {
   const { toggle } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get("https://skill-crafters-server-side.vercel.app/services").then((res) => {
+    axios.get("http://localhost:3000/services").then((res) => {
       setServices(res.data);
     });
   }, []);
@@ -28,8 +28,8 @@ const PopularServices = () => {
         to skill-building workshops, designed to empower learners of all ages.
         Unlock your potential today!
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {services.slice(0, 6).map((service) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12">
+        {services.map((service) => (
           <PopularServiceCard
             service={service}
             key={service._id}

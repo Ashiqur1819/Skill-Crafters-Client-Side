@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import ChooseUs from "../components/ChooseUs";
 import RecomendedServices from "../components/RecomendedServices";
 import { AuthContext } from "../provider/AuthProvider";
+import FAQ from "../components/FAQ";
 
 const Home = () => {
   const { toggle } = useContext(AuthContext);
@@ -26,6 +27,9 @@ const Home = () => {
         </div>
         <div className="mt-20">
           <ChooseUs></ChooseUs>
+        </div>
+        <div className="mt-20">
+         <FAQ></FAQ>
         </div>
       </div>
     </div>

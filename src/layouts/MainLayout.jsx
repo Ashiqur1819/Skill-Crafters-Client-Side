@@ -10,7 +10,7 @@ const MainLayout = () => {
 
   return (
     <div className={`max-w-7xl mx-auto ${toggle ? "bg-white" : "bg-gray-950"}`}>
-      <header>
+      <header className="sticky top-0 z-10">
         <Navbar></Navbar>
       </header>
       <main>

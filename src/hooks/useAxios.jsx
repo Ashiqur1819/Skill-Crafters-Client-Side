@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const axiosInstance = axios.create({
-  baseURL: "https://skill-crafters-server-side.vercel.app",
+  baseURL: "http://localhost:3000",
   withCredentials: true,
 });
 
