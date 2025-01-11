@@ -11,7 +11,7 @@ const ServiceToDo = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:3000/booked-services/${user.email}`
+        `https://skill-crafters-server-side.vercel.app/booked-services/${user.email}`
       )
       setServices(response.data)
     };
@@ -24,7 +24,7 @@ const ServiceToDo = () => {
         // send data to backend
         const status = { status: e };
         const response = await axios.patch(
-          `http://localhost:3000/status-update/${id}`,
+          `https://skill-crafters-server-side.vercel.app/status-update/${id}`,
           status
         );
 

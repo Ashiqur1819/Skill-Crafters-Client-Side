@@ -64,13 +64,13 @@ const BookedServices = () => {
                       <p
                         className={`${
                           service?.serviceStatus === "Pending" &&
-                          "bg-red-500"
+                          "text-red-500"
                         } ${
                           service?.serviceStatus === "Working" &&
-                          "bg-yellow-500"
+                          "text-yellow-500"
                         } ${
                           service?.serviceStatus === "Completed" &&
-                          "bg-green-400"
+                          "text-green-500"
                         } text-center py-1 px-2 rounded-md`}
                       >
                         {service?.serviceStatus}

@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxios from "../hooks/useAxios";
+import { AuthContext } from "../provider/AuthProvider";
 
 const UpdateService = () => {
   const navigate = useNavigate();
+  const {toggle} = useContext(AuthContext)
 
   const [service, setService] = useState([]);
   const { id } = useParams();
@@ -28,7 +30,7 @@ const UpdateService = () => {
 
     //  Send data from client side to server side
     axios
-      .put(`http://localhost:3000/services/${_id}`, updatedService)
+      .put(`https://skill-crafters-server-side.vercel.app/services/${_id}`, updatedService)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           Swal.fire({
@@ -43,7 +45,11 @@ const UpdateService = () => {
 
   return (
     <div className="px-4">
-      <div className="card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 bg-white rounded-md">
+      <div
+        className={`card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 rounded-md ${
+          toggle ? "bg-white " : "bg-zinc-900 border border-gray-600"
+        }`}
+      >
         <form onSubmit={handleUpdateService} className="card-body">
           <h2 className="text-4xl font-bold text-sky-500 text-center">
             Update A Service
@@ -51,7 +57,11 @@ const UpdateService = () => {
           <div className="divider my-2"></div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span
+                className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}
+              >
                 Service Image URL:
               </span>
             </label>
@@ -60,12 +70,16 @@ const UpdateService = () => {
               name="serviceImage"
               defaultValue={serviceImage}
               placeholder="Service image url"
-              className="input input-bordered text-gray-500"
+               className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}>
                 Service Name:
               </span>
             </label>
@@ -74,12 +88,16 @@ const UpdateService = () => {
               name="serviceName"
               defaultValue={serviceName}
               placeholder="Service name"
-              className="input input-bordered text-gray-500"
+               className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}>
                 Service Price:
               </span>
             </label>
@@ -88,12 +106,16 @@ const UpdateService = () => {
               name="price"
               defaultValue={price}
               placeholder="Service price"
-              className="input input-bordered text-gray-500"
+               className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}>
                 Service Area:
               </span>
             </label>
@@ -102,12 +124,16 @@ const UpdateService = () => {
               name="serviceArea"
               defaultValue={serviceArea}
               placeholder="Service area"
-              className="input input-bordered text-gray-500"
+               className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text text-base font-medium">
+              <span className={`label-text text-base font-medium ${
+                  toggle ? "text-gray-800" : "text-gray-300"
+                }`}>
                 Description:
               </span>
             </label>
@@ -116,7 +142,9 @@ const UpdateService = () => {
               name="description"
               defaultValue={description}
               placeholder="Description"
-              className="input input-bordered text-gray-500"
+               className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
             />
           </div>
           <div className="form-control mt-4">

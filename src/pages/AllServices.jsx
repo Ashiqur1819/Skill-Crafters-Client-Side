@@ -23,7 +23,7 @@ const AllServices = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/all-services`)
+      .get(`https://skill-crafters-server-side.vercel.app/all-services`)
       .then((res) => {
         setServices(res.data);
       });
@@ -36,7 +36,7 @@ const AllServices = () => {
       </Helmet>
       <div className="md:flex items-center justify-end gap-6 mt-6">
         <label
-          className={`input mt-3 input-bordered flex items-center gap-2 rounded-md text-white  ${
+          className={`input mt-3 input-bordered focus:border  flex items-center gap-2 rounded-md text-white  ${
             !toggle
               ? "bg-gray-900 border border-gray-600 "
               : "bg-white border border-gray-300 text-gray-600"

@@ -8,7 +8,7 @@ const RecomendedServices = () => {
   const { toggle } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/services").then((res) => {
+    axios.get("https://skill-crafters-server-side.vercel.app/services").then((res) => {
       setServices(res.data);
     });
   }, []);

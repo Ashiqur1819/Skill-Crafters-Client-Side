@@ -25,7 +25,7 @@ const AddService = () => {
     service.providerEmail = providerEmail;
 
     // Send service data from client side to server side
-    axios.post("http://localhost:3000/services", service).then((res) => {
+    axios.post("https://skill-crafters-server-side.vercel.app/services", service).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           icon: "success",
@@ -69,8 +69,8 @@ const AddService = () => {
               type="url"
               name="serviceImage"
               placeholder="Service image url"
-              className={`input input-bordered ${
-                toggle ? "bg-white" : "bg-gray-800"
+             className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
@@ -89,7 +89,7 @@ const AddService = () => {
               name="serviceName"
               placeholder="Service name"
               className={`input input-bordered ${
-                toggle ? "bg-white" : "bg-gray-800"
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
@@ -107,8 +107,8 @@ const AddService = () => {
               type="number"
               name="price"
               placeholder="Service price"
-              className={`input input-bordered ${
-                toggle ? "bg-white" : "bg-gray-800"
+             className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
@@ -126,8 +126,8 @@ const AddService = () => {
               type="text"
               name="serviceArea"
               placeholder="Service area"
-              className={`input input-bordered ${
-                toggle ? "bg-white" : "bg-gray-800"
+             className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
@@ -145,8 +145,8 @@ const AddService = () => {
               type="text"
               name="description"
               placeholder="Description"
-              className={`input input-bordered ${
-                toggle ? "bg-white" : "bg-gray-800"
+             className={`input input-bordered ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
