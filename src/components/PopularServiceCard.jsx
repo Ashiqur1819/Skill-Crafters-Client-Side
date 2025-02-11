@@ -21,7 +21,7 @@ const PopularServiceCard = ({ service }) => {
         transition: { duration: 0.2 },
         ease: ["easeIn", "easeOut"],
       }}
-      className={`card shadow-xl rounded-none ${
+      className={`card shadow-xl rounded-md ${
         toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
       }`}
     >
