@@ -126,9 +126,6 @@ const Navbar = () => {
             <NavLink to="/all_services">All Services</NavLink>
           </li>
           <li className="text-base">
-            <NavLink to="/about_us">About Us</NavLink>
-          </li>
-          <li className="text-base">
             {user?.email && (
               <details>
                 <summary>Dashboard</summary>
