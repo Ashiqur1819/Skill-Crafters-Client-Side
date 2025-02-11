@@ -15,9 +15,9 @@ const AllServices = () => {
   );
   const sortedServices = [...filteredServices].sort((a, b) =>{
     if (sortOrder === "asc") {
-      return a.serviceName.toLowerCase() > b.serviceName.toLowerCase() ? 1 : -1;
+      return a.price - b.price;
     } else {
-      return a.serviceName.toLowerCase() < b.serviceName.toLowerCase() ? 1 : -1; 
+      return b.price - a.price; 
     }
   });
 
