@@ -24,7 +24,7 @@ const BookedServices = () => {
       <div>
         <h2
           className={`text-3xl font-bold mb-6 ${
-            toggle ? "text-black" : "text-gray-200"
+            toggle ? "text-teal-500" : "text-teal-500"
           }`}
         >
           My Booked Services
