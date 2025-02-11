@@ -13,6 +13,7 @@ import BookNow from "../pages/BookNow";
 import AllServices from "../pages/AllServices";
 import PrivateRoute from "./PrivateRoute";
 import UpdateService from "../pages/UpdateService";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/all_services",
         element: <AllServices></AllServices>,
+      },
+      {
+        path: "/about_us",
+        element: <AboutUs></AboutUs>
       },
       {
         path: "/add_service",
@@ -62,11 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: (
-          <PrivateRoute>
-            <ServiceDetails></ServiceDetails>
-          </PrivateRoute>
-        ),
+        element: <ServiceDetails></ServiceDetails>,
       },
       {
         path: "/book_now/:id",
