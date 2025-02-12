@@ -132,7 +132,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control">
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500   text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400">
+              <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-400 to-sky-500   text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400">
                 Log In
               </button>
             </div>
@@ -143,7 +143,7 @@ const Login = () => {
               <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
+                className="py-2 w-full px-6 text-lg rounded-md bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500"
               >
                 <div className="flex items-center justify-center gap-3">
                   <span>Log In with Google</span>

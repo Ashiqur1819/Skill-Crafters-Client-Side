@@ -63,7 +63,7 @@ const AllServices = () => {
           </svg>
         </label>
         <label
-          className={`form-control mt-3 rounded-lg ${
+          className={`form-control mt-3 rounded-md ${
             !toggle ? "border border-gray-500" : "border border-gray-100"
           }`}
         >

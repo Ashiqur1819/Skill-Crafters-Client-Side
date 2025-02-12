@@ -46,7 +46,7 @@ const Slider = () => {
                 initial={{ x: 100 }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1, ease: easeInOut }}
-                className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
+                className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
               >
                 <Link to="/all_services">Explore Now</Link>
               </motion.button>
@@ -72,7 +72,7 @@ const Slider = () => {
                 flexible, mobile-friendly platform. Access quality education
                 whenever and wherever you need it.
               </p>
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
+              <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
                 <Link to="/all_services">Explore Now</Link>
               </button>
             </div>
@@ -97,7 +97,7 @@ const Slider = () => {
                 fun. Our innovative tools and techniques are designed to make
                 education more accessible than ever.
               </p>
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
+              <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
                 <Link to="/all_services">Explore Now</Link>
               </button>
             </div>

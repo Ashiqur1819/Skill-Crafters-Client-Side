@@ -196,7 +196,7 @@ const Navbar = () => {
             <button onClick={handleLogOut}>
               <Link
                 to="/"
-                className="py-2 px-4 rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
+                className="py-2 px-4 rounded-md bg-gradient-to-r from-red-500 to-red-600 text-white cursor-pointer font-semibold hover:from-red-600 hover:to-red-500"
               >
                 Log Out
               </Link>
@@ -206,7 +206,7 @@ const Navbar = () => {
           <button>
             <Link
               to="/login"
-              className="py-2 px-4 rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
+              className="py-2 px-4 rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500"
             >
               Log In
             </Link>

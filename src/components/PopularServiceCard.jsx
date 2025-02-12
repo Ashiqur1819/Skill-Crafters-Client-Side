@@ -68,7 +68,7 @@ const PopularServiceCard = ({ service }) => {
           </div>
         </div>
         <div className="card-actions mt-6">
-          <button className={`w-fit px-2 py-1 font-medium rounded-lg cursor-pointer text-start border-b border-teal-500 hover:text-teal-500 ${toggle ? "text-gray-600" : "text-gray-300"}`}>
+          <button className={`w-fit px-2 py-1 font-medium rounded-md cursor-pointer text-start border-b border-teal-500 hover:text-teal-500 ${toggle ? "text-gray-600" : "text-gray-300"}`}>
             <Link to={`/services/${_id}`}>View Details</Link>
           </button>
         </div>

@@ -37,7 +37,7 @@ const PopularServices = () => {
         ))}
       </div>
       <div className="flex items-center justify-center mt-10">
-        <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
+        <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
           <Link to="/all_services">Show All Services</Link>
         </button>
       </div>

@@ -94,7 +94,7 @@ const BookedServices = () => {
                 Start exploring and make your first booking today!
               </p>
               <div className="flex items-center justify-center mt-10">
-                <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
+                <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-teal-500 to-teal-400 text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
                   <Link to="/all_services">Back To All Services</Link>
                 </button>
               </div>

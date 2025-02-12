@@ -176,7 +176,7 @@ const Signup = () => {
               </button>
             </div>
             <div className="form-control mt-4">
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-teal-400 to-teal-500 text-white cursor-pointer font-semibold hover:from-teal-500 hover:to-teal-400">
+              <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-teal-400 to-teal-500 text-white cursor-pointer font-semibold hover:from-teal-500 hover:to-teal-400">
                 Sign Up
               </button>
             </div>
@@ -187,7 +187,7 @@ const Signup = () => {
               <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3"
+                className="py-2 w-full px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500 mb-3"
               >
                 <div className="flex items-center justify-center gap-3">
                   <span>Log In with Google</span>

@@ -97,7 +97,7 @@ const ServiceDetails = () => {
               </div>
             </div>
             <div className="mt-6">
-              <button className="py-2 w-full px-6 text-lg rounded-lg bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
+              <button className="py-2 w-full px-6 text-lg rounded-md bg-gradient-to-r from-sky-500 to-sky-400 text-white cursor-pointer font-semibold hover:from-sky-400 hover:to-sky-500">
                 <Link to={`/book_now/${_id}`}>Book Now</Link>
               </button>
             </div>

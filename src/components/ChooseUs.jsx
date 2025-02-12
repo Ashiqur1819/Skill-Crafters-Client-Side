@@ -20,7 +20,7 @@ const ChooseUs = () => {
         <div className="grid grid-cols-2 gap-6 md:gap-8 flex-1">
           <div
             className={`p-6 text-center rounded-md flex flex-col items-center justify-center ${
-              toggle ? "bg-blue-50" : "bg-gray-800"
+              toggle ? "bg-blue-50" : "bg-gray-700"
             }`}
           >
             <h2 className="text-5xl">🎓</h2>
@@ -30,7 +30,7 @@ const ChooseUs = () => {
           </div>
           <div
             className={`p-6 text-center rounded-md flex flex-col items-center justify-center ${
-              toggle ? "bg-blue-50" : "bg-gray-800"
+              toggle ? "bg-blue-50" : "bg-gray-700"
             }`}
           >
             <h2 className="text-5xl">🕒</h2>
@@ -40,7 +40,7 @@ const ChooseUs = () => {
           </div>
           <div
             className={`p-6 text-center rounded-md flex flex-col items-center justify-center ${
-              toggle ? "bg-blue-50" : "bg-gray-800"
+              toggle ? "bg-blue-50" : "bg-gray-700"
             }`}
           >
             <h2 className="text-5xl">🧹</h2>
@@ -50,7 +50,7 @@ const ChooseUs = () => {
           </div>
           <div
             className={`p-6 text-center rounded-md flex flex-col items-center justify-center ${
-              toggle ? "bg-blue-50" : "bg-gray-800"
+              toggle ? "bg-blue-50" : "bg-gray-700"
             }`}
           >
             <h2 className="text-5xl">🌟</h2>

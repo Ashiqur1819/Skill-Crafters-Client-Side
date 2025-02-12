@@ -148,7 +148,7 @@ const UpdateService = () => {
             />
           </div>
           <div className="form-control mt-4">
-            <button className="py-2 px-6 text-md rounded-lg bg-gradient-to-r from-teal-400 to-teal-500   text-white cursor-pointer font-semibold hover:from-teal-500 hover:to-teal-400">
+            <button className="py-2 px-6 text-md rounded-md bg-gradient-to-r from-teal-400 to-teal-500   text-white cursor-pointer font-semibold hover:from-teal-500 hover:to-teal-400">
               Update Now
             </button>
           </div>
