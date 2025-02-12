@@ -44,7 +44,7 @@ const AddService = () => {
     <div className="px-4">
       <div
         className={`card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 rounded-md ${
-          toggle ? "bg-white " : "bg-zinc-900 border border-gray-600"
+          toggle ? "bg-white " : "bg-gray-800 border border-gray-600"
         }`}
       >
         <Helmet>
@@ -69,7 +69,7 @@ const AddService = () => {
               type="url"
               name="serviceImage"
               placeholder="Service image url"
-             className={`input input-bordered ${
+             className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
                 toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
@@ -88,7 +88,7 @@ const AddService = () => {
               type="text"
               name="serviceName"
               placeholder="Service name"
-              className={`input input-bordered ${
+             className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
                 toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
@@ -107,7 +107,7 @@ const AddService = () => {
               type="number"
               name="price"
               placeholder="Service price"
-             className={`input input-bordered ${
+            className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
                 toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
@@ -126,7 +126,7 @@ const AddService = () => {
               type="text"
               name="serviceArea"
               placeholder="Service area"
-             className={`input input-bordered ${
+            className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
                 toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
@@ -145,13 +145,13 @@ const AddService = () => {
               type="text"
               name="description"
               placeholder="Description"
-             className={`input input-bordered ${
+            className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
                 toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
               }`}
             />
           </div>
           <div className="form-control mt-4">
-            <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-sky-400 to-sky-500   text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400">
+            <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-400 to-sky-500   text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400">
               Add Now
             </button>
           </div>

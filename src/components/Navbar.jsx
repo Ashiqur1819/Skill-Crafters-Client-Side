@@ -51,7 +51,7 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className={`menu dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow ${
-              toggle ? "bg-base-100" : "bg-gray-950 text-gray-400"
+              toggle ? "bg-base-100" : "bg-gray-800 text-gray-400"
             }`}
           >
             <li>
@@ -61,12 +61,15 @@ const Navbar = () => {
               <NavLink to="/all_services">All Services</NavLink>
             </li>
             <li>
+              <NavLink to="/about_us">About Us</NavLink>
+            </li>
+            <li>
               {user?.email && (
                 <details>
                   <summary>Dashboard</summary>
                   <ul
                     className={`p-2 w-44 rounded-md ${
-                      toggle ? "bg-white" : "bg-gray-950"
+                      toggle ? "bg-white" : "bg-gray-800"
                     }`}
                   >
                     <li>
@@ -87,7 +90,7 @@ const Navbar = () => {
             </li>
             <div
               className={`md:mr-12 text-2xl border h-12 w-12 flex items-center justify-center rounded-full ${
-                toggle ? "bg-white" : "bg-gray-950"
+                toggle ? "bg-white" : "bg-gray-800"
               }`}
             >
               {!toggle ? (
@@ -126,12 +129,15 @@ const Navbar = () => {
             <NavLink to="/all_services">All Services</NavLink>
           </li>
           <li className="text-base">
+            <NavLink to="/about_us">About Us</NavLink>
+          </li>
+          <li className="text-base">
             {user?.email && (
               <details>
                 <summary>Dashboard</summary>
                 <ul
                   className={`p-2 w-44 ${
-                    toggle ? "bg-blue-50" : "bg-gray-950"
+                    toggle ? "bg-blue-50" : "bg-gray-800"
                   }`}
                 >
                   <li>
@@ -152,7 +158,7 @@ const Navbar = () => {
           </li>
           <div
             className={`md:ml-24 text-xl border border-teal-400 h-10 w-10 flex items-center justify-center rounded-full ${
-              toggle ? "bg-white" : "bg-gray-950"
+              toggle ? "bg-white" : "bg-gray-800"
             }`}
           >
             {!toggle ? (

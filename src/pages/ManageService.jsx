@@ -53,7 +53,7 @@ const ManageService = () => {
   return (
     <div
       className={`px-4 md:px-6 lg:px-8 mt-12 ${
-        toggle ? "bg-white" : "bg-zinc-950"
+        toggle ? "bg-white" : "bg-gray-800"
       }`}
     >
       <Helmet>

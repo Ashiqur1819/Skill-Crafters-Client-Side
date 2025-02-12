@@ -17,7 +17,7 @@ const AllServiceCard = ({ service }) => {
   return (
     <div
       className={`card bg-base-100 border shadow-md rounded-md hover:-translate-y-3 duration-200 ${
-        toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
+        toggle ? "bg-white" : "bg-gray-800 border border-gray-700"
       }`}
     >
       <div className="p-3">

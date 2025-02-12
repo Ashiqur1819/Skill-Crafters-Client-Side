@@ -11,7 +11,7 @@ const Home = () => {
   const { toggle } = useContext(AuthContext);
 
   return (
-    <div className={`${toggle ? "bg-white" : "bg-gray-950"}`}>
+    <div className={`${toggle ? "bg-white" : "bg-gray-800"}`}>
       <Helmet>
         <title>Home | Skill Crafters</title>
       </Helmet>

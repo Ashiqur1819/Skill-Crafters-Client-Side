@@ -9,7 +9,7 @@ const FAQ = () => {
         <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-teal-500 capitalize mt-3">
           FAQ - Your Questions Answered
         </h2>
-        <div className={`${toggle ? "bg-white" : "bg-zinc-900-900"}`}>
+        <div className={`${toggle ? "bg-white" : "bg-gray-800-900"}`}>
           <div className={`collapse collapse-plus mt-12`}>
             <input type="radio" name="my-accordion-3" defaultChecked />
             <div

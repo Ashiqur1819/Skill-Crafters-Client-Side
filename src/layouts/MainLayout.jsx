@@ -9,7 +9,7 @@ const MainLayout = () => {
   const { toggle } = useContext(AuthContext);
 
   return (
-    <div className={`max-w-7xl mx-auto ${toggle ? "bg-white" : "bg-gray-950"}`}>
+    <div className={`max-w-7xl mx-auto ${toggle ? "bg-white" : "bg-gray-800"}`}>
       <header className="sticky top-0 z-10">
         <Navbar></Navbar>
       </header>

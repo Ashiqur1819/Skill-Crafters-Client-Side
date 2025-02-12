@@ -31,7 +31,7 @@ const ServiceDetails = () => {
     <div className="px-4">
       <div
         className={`p-6 md:p-12 mt-12 max-w-5xl mx-auto rounded-md ${
-          toggle ? "bg-blue-50" : "bg-zinc-950 border border-gray-700"
+          toggle ? "bg-blue-50" : "bg-gray-800 border border-gray-700"
         }`}
       >
         <Helmet>

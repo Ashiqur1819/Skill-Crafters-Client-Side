@@ -85,7 +85,7 @@ const BookNow = () => {
     <div className="px-4">
       <div
         className={`card w-full mx-auto max-w-2xl shrink-0 shadow-2xl mt-12 rounded-md ${
-          toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
+          toggle ? "bg-white" : "bg-gray-800 border border-gray-700"
         }`}
       >
         <Helmet>
@@ -113,9 +113,9 @@ const BookNow = () => {
                 defaultValue={_id}
                 readOnly
                 placeholder="Service id"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -134,9 +134,9 @@ const BookNow = () => {
                 defaultValue={serviceName}
                 readOnly
                 placeholder="Service name"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -155,9 +155,9 @@ const BookNow = () => {
                 defaultValue={serviceImage}
                 readOnly
                 placeholder="Service image"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -176,9 +176,9 @@ const BookNow = () => {
                 defaultValue={providerName}
                 readOnly
                 placeholder="Provider name"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -196,9 +196,9 @@ const BookNow = () => {
                 name="providerEmail"
                 defaultValue={providerEmail}
                 placeholder="Provider email"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -217,9 +217,9 @@ const BookNow = () => {
                 defaultValue={userName}
                 readOnly
                 placeholder="User name"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -238,9 +238,9 @@ const BookNow = () => {
                 defaultValue={userEmail}
                 readOnly
                 placeholder="User email"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -257,9 +257,9 @@ const BookNow = () => {
                 type="date"
                 name="date"
                 placeholder="Date"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -277,9 +277,9 @@ const BookNow = () => {
                 name="serviceArea"
                 defaultValue={serviceArea}
                 placeholder="Area"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control relative">
@@ -298,13 +298,13 @@ const BookNow = () => {
                 defaultValue={price}
                 readOnly
                 placeholder="Price"
-                className={`input input-bordered text-gray-400 ${
-                  toggle ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`input input-bordered rounded-md border border-gray-700 focus:border focus:border-gray-600 ${
+                toggle ? "bg-white text-gray-600" : "bg-gray-800 text-gray-400"
+              }`}
               />
             </div>
             <div className="form-control mt-4">
-              <button className="py-2 px-6 text-lg rounded-lg bg-gradient-to-r from-teal-500 to-teal-400   text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
+              <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-teal-500 to-teal-400   text-white cursor-pointer font-semibold hover:from-teal-400 hover:to-teal-500">
                 Purchase
               </button>
             </div>

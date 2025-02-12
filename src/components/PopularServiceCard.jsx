@@ -22,7 +22,7 @@ const PopularServiceCard = ({ service }) => {
         ease: ["easeIn", "easeOut"],
       }}
       className={`card shadow-xl rounded-md ${
-        toggle ? "bg-white" : "bg-zinc-900 border border-gray-700"
+        toggle ? "bg-white" : "bg-gray-800 border border-gray-700"
       }`}
     >
       <div className="p-3">
