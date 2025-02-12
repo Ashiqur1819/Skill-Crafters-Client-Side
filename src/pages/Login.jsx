@@ -121,17 +121,8 @@ const Login = () => {
               >
                 {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </button>
-              <label>
-                <Link
-                  className={`label-text-alt link text-sm font-medium ${
-                    toggle ? "text-gray-600" : "text-gray-400"
-                  }`}
-                >
-                  Forgot password?
-                </Link>
-              </label>
             </div>
-            <div className="form-control">
+            <div className="form-control mt-4">
               <button className="py-2 px-6 text-lg rounded-md bg-gradient-to-r from-sky-400 to-sky-500   text-white cursor-pointer font-semibold hover:from-sky-500 hover:to-sky-400">
                 Log In
               </button>
